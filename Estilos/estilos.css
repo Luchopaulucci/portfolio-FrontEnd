@@ -8,7 +8,10 @@
     background-attachment: fixed;
 }
 
-.about-me-img {
-    width: 20%;
-    height: 20%;
+.gray-bg{
+    background-color: #eaedf2;
+}
+
+.section {
+    padding: 100px;
 }
