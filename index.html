@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="Estilos/estilos.css">
     <!-- CDN PARA BOOSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- LINK PARA EL FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/bcc649c817.js" crossorigin="anonymous"></script>
     <title>Luciano Paulucci Portfolio</title>
 </head>
 <body>
@@ -20,8 +22,18 @@
                     <a class="navbar-brand" href="#">
                         <img src="Imagenes/Logo-ArgPrograma.png" alt="Logo" width="120px" height="70px" style="background-color: black;">
                     </a>
-                    <a class="nav-link" aria-current="page" href="#">Luciano Paulucci</a>
-                    <!--  LISTA DE REDES SOCIALES  -->
+                        <!--  LISTA DE REDES SOCIALES  -->
+                        <div class="header-right">
+                            <div class="social">
+                                <ul class="social-share social-style--2 color-black d-flex justify-content-start liststyle">
+                                    <a href="#"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                                    <a href="#"><i class="fa-brands fa-twitter-square fa-2x"></i></a>
+                                    <a href="#"><i class="fa-brands fa-github-square fa-2x"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                    <!-- BOTON DE LOGIN -->
+                    </div>
                     <button type="submit" class="btn btn-success" href="#" data-loggle="colapse">Login</button>
                     </div>
                 </nav>
@@ -36,8 +48,8 @@
                 <h1 class="mb-5">
                     soy <span>DESAROLLADOR WEB</span>
                 </h1>
-                <p class="mb-7">Mi nombre es Luciano y este es mi portfolio, lo invito a ver mis habilidades.</p>
-                <button type="button" class="btn btn-secondary">Saber mas</button>
+                <p class=" present mb-6">Mi nombre es Luciano y este es mi portfolio, lo invito a ver mis habilidades.</p>
+                <button type="button" class="btn btn-secondary" style="padding: 7px 12px;">Saber mas</button>
                 </div>
             </div>
             </div>
@@ -109,29 +121,29 @@
               </div>
             <div class="row mb-9 mb-xl-12">
               <div class="col-md-6 mb-4 mb-md-0">
-                <p class="h6 mb-2">HTML</p>
+                <p class="h5 mb-2">HTML <i class="awesome fa-brands fa-html5"></i> </p> 
                 <div class="progress mb-5 rounded-0" style="height:5px">
                   <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p class="h6 mb-2">BOOSTRAP</p>
+                <p class="h5 mb-2">BOOSTRAP <i class="awesome fa-brands fa-bootstrap"></i> </p>
                 <div class="progress mb-5 rounded-0" style="height:5px">
                   <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p class="h6 mb-2">JAVA SCRIPT</p>
+                <p class="h5 mb-2">JAVA SCRIPT <i class="awesome fa-brands fa-js-square"></i></i> </p>
                 <div class="progress rounded-0" style="height:5px">
                   <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
               <div class="col-md-6 mb-4 mb-md-0">
-                <p class="h6 mb-2">JAVA</p>
+                <p class="h5 mb-2">JAVA <i class="awesome fa-brands fa-java"></i> </p>
                 <div class="progress mb-5 rounded-0" style="height:5px">
                   <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p class="h6 mb-2">MYSQL</p>
+                <p class="h5 mb-2">MYSQL <i class="awesome fa-solid fa-fish-fins fa-1.5x"></i> </p>
                 <div class="progress mb-5 rounded-0" style="height:5px">
                   <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p class="h6 mb-2">SPRINGBOOT</p>
+                <p class="h5 mb-2">SPRINGBOOT <i class="awesome fa-solid fa-leaf"></i> </p>
                 <div class="progress rounded-0" style="height:5px">
                   <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
@@ -200,10 +212,26 @@
         </div>
     </section>
     <section class="sectionn">
-        <div class="container">
+        <div class="container text-center">
             <h4>PORTFOLIO</h4>
-            <div>
-                <p>Copyright © Lucho.com 2020. Todos los derechos reservados.</p>
+            <!--  LISTA DE REDES SOCIALES  -->
+            <div class="header-right align-items-center">
+                <div class="social">
+                    <ul class="color-black">
+                        <a href="#"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter-square fa-2x"></i></a>
+                        <a href="#"><i class="fa-brands fa-github-square fa-2x"></i></a>
+                    </ul>
+                </div>
+            </div>
+            <p>Copyright © Lucho.com 2022. Todos los derechos reservados.</p>
+        </div>
+        <!-- NO ANDA -->
+        <div class="header-right align-items-left">
+            <div class="subir">
+                <ul class="color-black">
+                    <a href="#"><i class="fa-solid fa-square-up"></i></i></a>
+                </ul>
             </div>
         </div>
     </section>

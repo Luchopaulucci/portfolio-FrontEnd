@@ -1,3 +1,4 @@
+/* ESTILO PARA EL HEADER*/
 .header { 
     width: 100%;
     min-height: 100vh;
@@ -7,20 +8,33 @@
     background-size: cover;
     background-attachment: fixed;
 }
-
+/* ESTILO PARA QUE SE VEA GRISEL FONDO DE LOS SECTION*/
 .gray-bg{
     background-color: #eaedf2;
 }
-
+/* LE DA PADDING A TODOS LOS SECTION*/
 .section {
     padding: 100px;
 }
-
+/* LE DA COLOR AL */
 .sectionn{
     background-color: grey;
     padding: 50px;
 }
-
+/* COLOR DE LA NAVBAR*/
 .gray-nvr{
     background-color: grey;
+}
+/* ESTILO PARA LOS FONT AWESOME DE LA PARTE DE HABILIDAD*/
+.awesome{
+    font-size: 25px;
+}
+/* ESTILO PARA LA PRESENTACION EN LA PARTE DEL HEAD*/
+.present{
+    padding-bottom: 30px;
+}
+/* ESTILO PARA SEPARAR LOS ICONOS DE REDES SOCIALES EN LA NAVBAR*/
+.social{
+    letter-spacing:15px;
+    padding-top: 15px;
 }
