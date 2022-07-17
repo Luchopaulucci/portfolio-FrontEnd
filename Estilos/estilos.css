@@ -1,4 +1,4 @@
-/* ESTILO PARA EL HEADER*/
+/* ESTILO PARA EL HEADER, IMAGEN SE VEA BIEN*/
 .header { 
     width: 100%;
     min-height: 100vh;
@@ -7,6 +7,13 @@
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+}
+/* LOGO DE ARG PROGRAMA FONDO PARA QUE SE VEA*/
+.logo-Arg {
+    background-color: black;
+    width: 120px;
+    height: 70px;
+    border-radius: 5%;
 }
 /* ESTILO PARA QUE SE VEA GRISEL FONDO DE LOS SECTION*/
 .gray-bg{
@@ -23,7 +30,7 @@
 }
 /* COLOR DE LA NAVBAR*/
 .gray-nvr{
-    background-color: grey;
+    background-color: #505050;
 }
 /* ESTILO PARA LOS FONT AWESOME DE LA PARTE DE HABILIDAD*/
 .awesome{
