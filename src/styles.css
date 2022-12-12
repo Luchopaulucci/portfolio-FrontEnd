@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+.section{
+    padding: 100px;
+}
+.gray-bg{
+    background-color: #eaedf2;
+}
+.titulo{
+    padding-bottom: 40px;
+}
+.social{
+    letter-spacing:15px;
+    padding-top: 15px;
+}
+.agregar-eliminar{
+    display: flex;
+    justify-content: center;
+    letter-spacing: 25px;
+    padding-bottom: 25px;
+}
