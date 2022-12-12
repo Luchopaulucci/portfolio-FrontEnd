@@ -1,8 +1,35 @@
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<section class="login">
+<div class="row">
+  <button routerLink="/" type="button" class="btn btn-link">VOLVER</button>
+  <div class="text-center texto">
+    <h3>INICIO DE SESION</h3>
+  </div>
+
+  <form class="formulario">
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label texto">Correo</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        placeholder="name@correo.com"
+        aria-describedby="emailHelp"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label texto">Contraseña</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="contraseña"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary texto">Iniciar Sesion</button>
+
+  </form>
 </div>
-<div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
+</section>
