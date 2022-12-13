@@ -13,6 +13,14 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { IndexComponent } from './componentes/index/index.component';
+import { Pagina404Component } from './componentes/pagina404/pagina404.component';
+import { LogoutComponent } from './componentes/logout/logout.component';
+import { AddestudioComponent } from './edicion/addestudio/addestudio.component';
+import { AddacercadeComponent } from './edicion/addacercade/addacercade.component';
+import { AddexperinciaComponent } from './edicion/addexperincia/addexperincia.component';
+import { AddskillComponent } from './edicion/addskill/addskill.component';
+import { AddproyectoComponent } from './edicion/addproyecto/addproyecto.component';
+import { EliminarComponent } from './edicion/eliminar/eliminar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +35,14 @@ import { IndexComponent } from './componentes/index/index.component';
     ProyectosComponent,
     FooterComponent,
     IndexComponent,
+    Pagina404Component,
+    LogoutComponent,
+    AddestudioComponent,
+    AddacercadeComponent,
+    AddexperinciaComponent,
+    AddskillComponent,
+    AddproyectoComponent,
+    EliminarComponent,
   ],
   imports: [
     BrowserModule,

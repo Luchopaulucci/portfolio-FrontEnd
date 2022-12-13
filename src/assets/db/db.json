@@ -1,0 +1,119 @@
+{
+    "nombre":"Luciano Paulucci",
+    "fotoperfil":"../imagenes/foto-perfil.jpg",
+    "acercade": "lore ipsium",
+
+
+    "redes":[
+        {
+            "id":1,
+            "url": "https://www.linkedin.com/in/luciano-paulucci-6a03a1241/",
+            "icono":"fa-brands fa-linkedin fa-3x"
+
+        },
+        {
+            "id":2,
+            "url": "https://twitter.com/luchopaluch",
+            "icono":"fa-brands fa-twitter-square fa-3x"
+
+        },
+        {
+            "id":3,
+            "url": "https://github.com/Luchopaulucci",
+            "icono":"fa-brands fa-github-square fa-3x"
+
+        }
+    ],
+
+    "educacion":[
+        {
+            "id":1,
+            "titulo": "Primario",
+            "institution": "Santa Maria Goretti",
+            "inicio":"2007",
+            "fin":"2020"
+        },
+        {
+            "id":2,
+            "titulo": "Secundario",
+            "institution": "Santa Maria Goretti",
+            "inicio":"2015",
+            "fin":"2020"
+        },
+        {
+            "id":3,
+            "titulo": "Universitario",
+            "institution": "Universidad Tecnologica Nacional Regional Mendoza",
+            "inicio":"2021",
+            "fin":"Actualidad"
+        }
+    ],
+    
+    "experiencia":[
+        {
+            "id":1,
+            "title": "Desarollo web",
+            "descripcion": "Desarollo de mi portfolio",
+            "inicio":"",
+            "fin":""
+        },
+        {
+            "id":2,
+            "title": "Desarollo web",
+            "descripcion": "Proyectos personales",
+            "inicio":"2020",
+            "fin":"Actualidad"
+        }
+    ],
+
+    "projects":[
+        {
+            "id":1,
+            "url": "https://github.com/Luchopaulucci/portfolio-FrontEnd",
+            "title": "Portfolio",
+            "description": "Portfiolio el cual mustra informacion personal y demas cosas sobre mi.",
+            "start":"2022",
+            "end":"2023"
+        
+        }   
+    ],
+    
+    "skills":[
+        {
+            "id":1,
+            "name":"HTML",
+            "percentage":100
+        },
+        {
+            "id":1,
+            "name":"CSS",
+            "percentage":100
+        },
+        {
+            "id":1,
+            "name":"BOOTSTRAP",
+            "percentage":100
+        },
+        {
+            "id":1,
+            "name":"ANGULAR",
+            "percentage":100
+        },{
+            "id":1,
+            "name":"JAVA",
+            "percentage":100
+        },{
+            "id":1,
+            "name":"SPRINGBOOT",
+            "percentage":100
+        },{
+            "id":1,
+            "name":"TYPESCRIPT",
+            "percentage":100
+        },{
+            "id":1,
+            "name":"MYSQL",
+            "percentage":100
+        }
+    ]
+}
