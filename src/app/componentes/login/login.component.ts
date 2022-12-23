@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent implements OnInit {
   form: FormGroup;
 
@@ -35,7 +36,6 @@ export class LoginComponent implements OnInit {
   get MailValid() {
     return false
   }
- 
 
   onEnviar(event: Event){
     // Detenemos la propagación o ejecución del compotamiento submit de un form

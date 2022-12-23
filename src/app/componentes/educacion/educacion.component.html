@@ -1,6 +1,11 @@
 <section id="educacion" class="section gray-bg">
   <div class="col-12">
     <h2 class="h3 titulo text-center">Education</h2>
+    <div class="agregar-eliminar">
+      <button type="button" class="btn btn-primary" routerLink="/Add-estudio">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
     <div class="card" aria-hidden="true">
       <div class="card-body">
         <h5>EXPERIENCIA 1</h5>
@@ -13,7 +18,11 @@
         <p>desde</p>
         <p>hasta</p>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">
+          <button
+            type="button"
+            class="btn btn-primary"
+            routerLink="/Editar-estudio"
+          >
             <i class="fa-solid fa-pen"></i>
           </button>
           <button type="button" class="btn btn-primary">

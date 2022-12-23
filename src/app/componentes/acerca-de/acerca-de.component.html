@@ -6,13 +6,18 @@
           <h3 class="dark-color text-center">Acerca de mi</h3>
         </div>
         <div class="agregar-eliminar">
-          <button type="button" class="btn btn-primary">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-          <button type="button" class="btn btn-primary">
+          <button
+            type="button"
+            class="btn btn-primary"
+            routerLink="/Add-acercade"
+          >
             <i class="fa-solid fa-plus"></i>
           </button>
-          <button type="button" class="btn btn-primary">
+          <button
+            type="button"
+            class="btn btn-primary"
+            routerLink="/Editar-acercade"
+          >
             <i class="fa-solid fa-pen"></i>
           </button>
         </div>
@@ -31,7 +36,7 @@
       </div>
       <div class="col-xl-6 info-personal">
         <div class="acerca-de-mi">
-          <h4>Soy Luciano Paulucci</h4>
+          <h4>Soy {{miPortfolio.nombre}}</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse animi
             omnis ad, rerum sunt minima eveniet, ea, unde asperiores veritatis
