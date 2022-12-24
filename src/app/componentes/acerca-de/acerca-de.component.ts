@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicios/servicio.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-acerca-de',
@@ -8,7 +9,7 @@ import { ServicioService } from 'src/app/servicios/servicio.service';
 })
 export class AcercaDeComponent implements OnInit {
 
-  miPortfolio:any;
+  perfil:any;
 
   constructor(private datosPortfolio:ServicioService) { }
 
@@ -16,7 +17,7 @@ export class AcercaDeComponent implements OnInit {
     this.datosPortfolio.getDatos().subscribe(data=>{
       console.log(data);
 
-      this.miPortfolio=data;
+      this.perfil=data;
 
     });
 

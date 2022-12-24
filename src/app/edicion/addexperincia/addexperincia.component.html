@@ -4,7 +4,7 @@
       <h4><i class="bi bi-chat-left-quote"></i>Experiencias Laborales</h4>
     </div>
     <div class="mb-1">
-      <form id="contacto">
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
         <div class="mb-4">
           <label for="informacion"
             ><i class="bi bi-envelope-fill"></i> Institucion</label
