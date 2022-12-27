@@ -11,6 +11,11 @@
           >
           <input type="text" class="form-control" id="habilidad" required />
           <div class="text-danger"></div>
+          <div *ngIf="Titulo?.errors && Titulo?.touched">
+            <p *ngIf="Titulo?.hasError('required')" class="error">
+              El dato es requerido.
+            </p>
+          </div>
           <br />
         </div>
         <div class="mb-4">
@@ -24,6 +29,11 @@
             id="porcentaje"
           />
           <div class="text-danger"></div>
+          <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+            <p *ngIf="Porcentaje?.hasError('required')" class="error">
+              El dato es requerido.
+            </p>
+          </div>
         </div>
 
         <div class="mb-2">
