@@ -8,11 +8,10 @@
         <i class="fa-solid fa-plus"></i>
       </button>
     </div>
-    <li *ngFor="let skills of skillsList">
-
+    <li *ngFor="let skills of skillsList" class="lista">
       <div class="row mb-12">
         <div class="col-12 align-items-center">
-          <p class="h5">{{skills.titulo}}</p>
+          <p class="h5">{{ skills.titulo }}</p>
           <div class="progress mb-5 rounded-5" style="height: 7px">
             <div
               class="progress-bar"
@@ -37,7 +36,6 @@
           <i class="fa-solid fa-trash"></i>
         </button>
       </div>
-
     </li>
   </div>
 </section>

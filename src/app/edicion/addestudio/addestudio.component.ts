@@ -12,6 +12,7 @@ export class AddestudioComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
+      institucion: ['',[Validators.required]],
       desde: ['', [Validators.required]],
       hasta: ['', [Validators.required]],
     });
@@ -21,6 +22,10 @@ export class AddestudioComponent implements OnInit {
 
   get Titulo() {
     return this.form.get('titulo');
+  }
+
+  get Institucion() {
+    return this.form.get('institucion');
   }
 
   get Desde() {
@@ -33,6 +38,10 @@ export class AddestudioComponent implements OnInit {
 
   get TituloValid() {
     return this.Titulo?.touched && !this.Titulo.valid;
+  }
+
+  get InstitucionValid() {
+    return this.Institucion?.touched && !this.Institucion.valid;
   }
 
   get DesdeValid() {

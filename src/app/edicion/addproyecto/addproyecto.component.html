@@ -5,32 +5,51 @@
     </div>
     <div class="mb-1">
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-        <div class="mb-4">
-          <label for="formFile" class="form-label">Imagen del proyecto</label>
-          <input class="form-control" type="file" id="formFile" />
-          <div class="text-danger"></div>
+        <div>
+          <label for="email">Titulo </label>
+          <input type="titulo" formControlName="titulo" />
         </div>
-        <div class="mb-4">
-          <label for="informacion"
-            ><i class="bi bi-envelope-fill"></i> Nombre del proyecto</label
-          >
-          <input type="text" class="form-control" id="informacion" required />
-          <div class="text-danger"></div>
+        <div *ngIf="Titulo?.errors && Titulo?.touched">
+          <p *ngIf="Titulo?.hasError('required')" class="error">
+            El titulo es requerido.
+          </p>
         </div>
-        <div class="mb-4">
-          <label for="nombre"
-            ><i class="bi bi-envelope-fill"></i>Descripcion</label
-          >
-          <input type="text" class="form-control" id="nombre" required />
-          <div class="text-danger"></div>
+        <br />
+        <div>
+          <label for="exampleInputPassword1" class="form-label"
+            >Informacion
+          </label>
+          <input
+            type="infromacion"
+            formControlName="informacion"
+          />
         </div>
-        <div class="mb-2">
-          <button
-            id="botton"
-            class="col-12 btn btn-primary d-flex justify-content-between"
-          >
-            <span>Guardar </span><i id="guardar" class="bi bi-cursor-fill"></i>
-          </button>
+        <div *ngIf="Informacion?.errors && Informacion?.touched">
+          <p *ngIf="Informacion?.hasError('required')" class="error">
+            La informacion es requerida.
+          </p>
+        </div>
+        <div>
+          <label for="email">Desde </label>
+          <input type="date" formControlName="desde" />
+        </div>
+        <div *ngIf="Desde?.errors && Desde?.touched">
+          <p *ngIf="Desde?.hasError('required')" class="error">
+            La fecha es requerida.
+          </p>
+        </div>
+        <div>
+          <label for="email">Hasta </label>
+          <input type="date" formControlName="hasta" />
+        </div>
+        <div *ngIf="Hasta?.errors && Hasta?.touched">
+          <p *ngIf="Hasta?.hasError('required')" class="error">
+            La fecha es requerida.
+          </p>
+        </div>
+        <br />
+        <div>
+          <button type="submit" class="btn-primary">Guardar</button>
         </div>
         <a routerLink="/">volver</a>
       </form>

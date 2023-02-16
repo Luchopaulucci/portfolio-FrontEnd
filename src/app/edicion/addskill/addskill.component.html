@@ -5,44 +5,36 @@
     </div>
     <div class="mb-1">
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-        <div class="mb-4">
-          <label for="nombre"
-            ><i class="bi bi-envelope-fill"></i> Nombre de la habilidad</label
-          >
-          <input type="text" class="form-control" id="habilidad" required />
-          <div class="text-danger"></div>
-          <div *ngIf="Titulo?.errors && Titulo?.touched">
-            <p *ngIf="Titulo?.hasError('required')" class="error">
-              El dato es requerido.
-            </p>
-          </div>
-          <br />
+        <div>
+          <label for="titulo"
+            ><i class="bi bi-envelope-fill"></i> Nombre de la tecnologia</label>
+            <br>
+          <input type="titulo" formControlName="titulo" />
         </div>
-        <div class="mb-4">
-          <label for="customRange3" class="form-label">Example range</label>
-          <input
-            type="range"
-            class="form-range"
-            min="0"
-            max="100"
-            step="5"
-            id="porcentaje"
-          />
-          <div class="text-danger"></div>
-          <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
-            <p *ngIf="Porcentaje?.hasError('required')" class="error">
-              El dato es requerido.
-            </p>
-          </div>
+        <div *ngIf="Titulo?.errors && Titulo?.touched">
+          <p *ngIf="Titulo?.hasError('required')" class="error">
+            El titulo es requerido.
+          </p>
         </div>
 
-        <div class="mb-2">
-          <button
-            id="botton"
-            class="col-12 btn btn-primary d-flex justify-content-between"
-          >
-            <span>Guardar </span><i id="guardar" class="bi bi-cursor-fill"></i>
-          </button>
+        <br />
+        <div class="mb-4">
+          <label for="porcentaje"
+            ><i class="bi bi-envelope-fill"></i> Porcentaje de aprendisaje</label>
+            <br>
+          <input
+            type="porcentaje"
+            formControlName="porcentaje"
+          />
+        </div>
+        <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+          <p *ngIf="Porcentaje?.hasError('required')" class="error">
+            El porcentaje es requerido.
+          </p>
+        </div>
+        <br />
+        <div>
+          <button type="submit">Iniciar Sesión</button>
         </div>
         <a routerLink="/">volver</a>
       </form>

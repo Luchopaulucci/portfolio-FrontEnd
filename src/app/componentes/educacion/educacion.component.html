@@ -7,13 +7,12 @@
       </button>
     </div>
 
-    <li *ngFor="let educacion of educacionList">
-
+    <li *ngFor="let educacion of educacionList" class="lista">
       <div class="card" aria-hidden="true">
         <div class="card-body">
-          <h5>{{educacion.titulo}}</h5>
-          <p>Inicio: {{educacion.desde}}</p>
-          <p>Fin: {{educacion.hasta}}</p>
+          <h5>{{ educacion.titulo }}</h5>
+          <p>Inicio: {{ educacion.desde }}</p>
+          <p>Fin: {{ educacion.hasta }}</p>
           <div class="btn-group" role="group" aria-label="Basic example">
             <button
               type="button"
@@ -28,8 +27,6 @@
           </div>
         </div>
       </div>
-
     </li>
-    
   </div>
 </section>

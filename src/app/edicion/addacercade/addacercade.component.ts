@@ -12,7 +12,6 @@ export class AddacercadeComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       nombre: ['', [Validators.required]],
-      fotoperfil: ['', [Validators.required]],
       informacion: ['', [Validators.required]],
     });
   }
@@ -23,10 +22,6 @@ export class AddacercadeComponent implements OnInit {
     return this.form.get('nombre');
   }
 
-  get Fotoperfil() {
-    return this.form.get('fotoperfil');
-  }
-
   get Informacion() {
     return this.form.get('informacion');
   }
@@ -35,15 +30,9 @@ export class AddacercadeComponent implements OnInit {
     return this.Nombre?.touched && !this.Nombre.valid;
   }
 
-  get FotoperfilValid() {
-    return this.Fotoperfil?.touched && !this.Fotoperfil.valid;
-  }
-
   get InformacionValid() {
     return this.Informacion?.touched && !this.Informacion.valid;
   }
-
-
 
   onEnviar(event: Event) {
     // detiene la propagacion o ejecucion del submit
