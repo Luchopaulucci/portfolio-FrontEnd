@@ -10,17 +10,15 @@
         <i class="fa-solid fa-plus"></i>
       </button>
     </div>
-
-    <li *ngFor="let experiencia of experienciaList" class="lista">
-
+    <li *ngFor="let experiencia of experiencias" class="lista">
       <div class="card" aria-hidden="true">
         <div class="card-body">
-          <h5>{{experiencia.titulo}}</h5>
+          <h5>{{ experiencia.titulo }}</h5>
           <p>
-            {{experiencia.informacion}}
+            {{ experiencia.area }}
           </p>
-          <p>Inicio: {{experiencia.desde}}</p>
-          <p>Fin: {{experiencia.hasta}}</p>
+          <p>Inicio: {{ experiencia.desde }}</p>
+          <p>Fin: {{ experiencia.hasta }}</p>
           <div class="btn-group" role="group" aria-label="Basic example">
             <button
               type="button"
@@ -35,8 +33,6 @@
           </div>
         </div>
       </div>
-
     </li>
-    
   </div>
 </section>
