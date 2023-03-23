@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 import { Observable } from 'rxjs';
+import { AcercadeServiceService } from 'src/app/servicios/acercade.service.service';
+import { Persona } from 'src/app/model/persona';
 
 @Component({
   selector: 'app-acerca-de',
@@ -9,19 +11,17 @@ import { Observable } from 'rxjs';
 })
 export class AcercaDeComponent implements OnInit {
 
-  perfil:any;
+  perfil: Persona[]=[];
 
-  constructor(private datosPortfolio:ServicioService) { }
-
+  constructor(private sPersona: AcercadeServiceService) { }
   ngOnInit(): void {
-    this.datosPortfolio.getDatos().subscribe(data=>{
-      console.log(data);
+    this.cargarPersona();
+    }
 
-      this.perfil=data;
-
-    });
-
-    
+  cargarPersona():void{
+    this.sPersona.listarPersonas().subscribe(data =>{this.perfil=data})
   }
 
 }
+
+

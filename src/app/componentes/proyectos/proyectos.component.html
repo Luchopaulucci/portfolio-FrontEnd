@@ -7,21 +7,15 @@
       </button>
     </div>
 
-    <li *ngFor="let proyectos of proyectosList" class="lista">
+    <li *ngFor="let proyectos of proyectos" class="lista">
       <div class="card" aria-hidden="true">
         <div class="card-body">
-          <h5>{{ proyectos.nombre }}</h5>
-          <p>
-            {{ proyectos.descripcion }}
-          </p>
+          <h5>{{ proyectos.titulo }}</h5>
+          <p>{{ proyectos.informacion }}</p>
           <p>Inicio: {{ proyectos.desde }}</p>
           <p>Fin: {{ proyectos.hasta }}</p>
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button
-              type="button"
-              class="btn btn-primary"
-              routerLink="/Editar-estudio"
-            >
+            <button type="button" class="btn btn-primary" routerLink="/Editar-estudio">
               <i class="fa-solid fa-pen"></i>
             </button>
             <button type="button" class="btn btn-primary">

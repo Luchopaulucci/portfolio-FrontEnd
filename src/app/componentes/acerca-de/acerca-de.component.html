@@ -23,22 +23,22 @@
         </div>
       </div>
     </div>
-
+    <li *ngFor="let dato of perfil" class="lista">
     <div class="row align-items-center">
       <div class="col-lg-4">
         <div class="box-shadow">
           <img
             class="img-fluid rounded"
-            src="../../../assets/imagenes/foto-perfil.jpg"
+            [src]="dato.urlFoto"
             alt="lucho"
           />
         </div>
       </div>
       <div class="col-xl-6 info-personal">
         <div class="acerca-de-mi">
-          <h4>Soy {{perfil.nombre}}</h4>
+          <h4>Soy {{dato.nombreCompleto}}</h4>
           <p>
-            {{perfil.informacion}}
+            {{dato.informacion}}
           </p>
         </div>
       </div>

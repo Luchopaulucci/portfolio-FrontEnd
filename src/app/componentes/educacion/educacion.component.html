@@ -7,10 +7,11 @@
       </button>
     </div>
 
-    <li *ngFor="let educacion of educacionList" class="lista">
+    <li *ngFor="let educacion of educaciones" class="lista">
       <div class="card" aria-hidden="true">
         <div class="card-body">
           <h5>{{ educacion.titulo }}</h5>
+          <p>Institucion: {{educacion.institucion}}</p>
           <p>Inicio: {{ educacion.desde }}</p>
           <p>Fin: {{ educacion.hasta }}</p>
           <div class="btn-group" role="group" aria-label="Basic example">

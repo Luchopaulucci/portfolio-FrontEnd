@@ -11,23 +11,16 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 })
 export class SkillsComponent implements OnInit {
 
-  skillsList:any;
   habilidades : Habilidad[]=[];
-  constructor(private datosPortfolio:ServicioService, private sHabilidad:HabilidadService) { }
+
+  constructor( private sHabilidad: HabilidadService) { }
 
   ngOnInit(): void {
-    /* this.cargarHabilidad();
-    this.datosPortfolio.getDatos().subscribe(data=>{
-      console.log(data);
-
-      this.skillsList=data.skills;
-
-    }); */
-
+    this.cargarHabilidades();
   }
 
-  /* cargarHabilidad():void{
-    this.sHabilidad.list().subscribe(data=> {this.habilidades=data})
-  } */
+  cargarHabilidades():void{
+    this.sHabilidad.listarHabilidad().subscribe(data =>{this.habilidades=data})
+  }
 
 }
