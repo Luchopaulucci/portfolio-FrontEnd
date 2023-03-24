@@ -11,35 +11,51 @@ export class AddacercadeComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      nombre: ['', [Validators.required]],
+      nombreCompleto: ['', [Validators.required]],
       informacion: ['', [Validators.required]],
+      urlFoto: ['', [Validators.required]],
+      email: [''],
+      clave: ['']
     });
   }
 
   ngOnInit(): void {}
 
-  get Nombre() {
-    return this.form.get('nombre');
+  get NombreCompleto() {
+    return this.form.get('nombreCompleto');
   }
 
   get Informacion() {
     return this.form.get('informacion');
   }
 
+  get UrlFoto(){
+    return this.form.get('urlFoto');
+  }
+
+  get Email(){
+    return this.form.get('email');
+  }
+
+  get Clave(){
+    return this.form.get('clave');
+  }
+
   get NombreValid() {
-    return this.Nombre?.touched && !this.Nombre.valid;
+    return this.NombreCompleto?.touched && !this.NombreCompleto.valid;
   }
 
   get InformacionValid() {
     return this.Informacion?.touched && !this.Informacion.valid;
   }
 
+  get UrlFotoValid() {
+    return this.UrlFoto?.touched && !this.UrlFoto.valid;
+  }
+
   onEnviar(event: Event) {
-    // detiene la propagacion o ejecucion del submit
     event.preventDefault;
     if (this.form.valid) {
-      // llamar al servicio para enviar datos al server
-      // logica extra
       alert('El formulario ha sido enviado con exito!');
     } else {
       this.form.markAllAsTouched();

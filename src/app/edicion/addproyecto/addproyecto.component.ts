@@ -20,8 +20,6 @@ export class AddproyectoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // methods
-
   get Titulo() {
     return this.form.get('titulo');
   }
@@ -49,11 +47,8 @@ export class AddproyectoComponent implements OnInit {
   }
 
   onEnviar(event: Event) {
-    // detiene la propagacion o ejecucion del submit
     event.preventDefault;
     if (this.form.valid) {
-      // llamar al servicio para enviar datos al server
-      // logica extra
       alert('El formulario ha sido enviado con exito!');
     } else {
       this.form.markAllAsTouched();

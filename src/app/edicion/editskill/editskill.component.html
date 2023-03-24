@@ -4,34 +4,21 @@
       <h4><i class="bi bi-chat-left-quote"></i>Habilidad</h4>
     </div>
     <div class="mb-1">
-      <form id="contacto">
+      <!-------------------------------FORMULARIO PARA AGREGAR UNA HABILIDAD--------------------------------->
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <!-------------------------------INPUT DE EL PORCENTAJE--------------------------------->
         <div class="mb-4">
-          <label for="nombre"
-            ><i class="bi bi-envelope-fill"></i> Nombre de la habilidad</label
-          >
-          <input type="text" class="form-control" id="habilidad" required />
-          <div class="text-danger"></div>
+          <label for="porcentaje"> <i class="bi bi-envelope-fill"></i> Porcentaje de aprendisaje </label>
+          <input type="porcentaje" class="form-control" formControlName="porcentaje" />
         </div>
-        <div class="mb-4">
-          <label for="customRange3" class="form-label">Example range</label>
-          <input
-            type="range"
-            class="form-range"
-            min="0"
-            max="100"
-            step="5"
-            id="porcentaje"
-          />
-          <div class="text-danger"></div>
+        <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+          <p *ngIf="Porcentaje?.hasError('required')" class="error">
+            <strong>El porcentaje es requerido.</strong>
+          </p>
         </div>
-
-        <div class="mb-2">
-          <button
-            id="botton"
-            class="col-12 btn btn-primary d-flex justify-content-between"
-          >
-            <span>Guardar </span><i id="guardar" class="bi bi-cursor-fill"></i>
-          </button>
+        <!-------------------------------BOTON PARA ENVIAR--------------------------------->
+        <div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
         <a routerLink="/">volver</a>
       </form>

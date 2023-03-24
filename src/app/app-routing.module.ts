@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'Add-experiencia', component:AddexperinciaComponent},
   {path: 'Editar-experiencia', component:EditexperienciaComponent},
   {path: 'Add-estudio', component:AddestudioComponent},
-  {path: 'Editar-estudio', component:EditestudioComponent},
+  {path: 'Editar-estudio', component:EditproyectoComponent},
   {path: 'Add-habilidad', component:AddskillComponent},
   {path: 'Editar-habilidad', component:EditskillComponent},
   {path: 'Add-proyecto', component:AddproyectoComponent},

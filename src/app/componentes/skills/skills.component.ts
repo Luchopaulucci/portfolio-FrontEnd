@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicioService } from 'src/app/servicios/servicio.service';
 import { Observable } from 'rxjs';
 import { Habilidad } from 'src/app/model/habilidad';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';

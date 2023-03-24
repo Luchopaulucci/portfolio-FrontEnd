@@ -4,37 +4,31 @@
       <h4><i class="bi bi-chat-left-quote"></i>Habilidad</h4>
     </div>
     <div class="mb-1">
+      <!-------------------------------FORMULARIO PARA AGREGAR UNA HABILIDAD--------------------------------->
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-        <div>
-          <label for="titulo"
-            ><i class="bi bi-envelope-fill"></i> Nombre de la tecnologia</label>
-            <br>
-          <input type="titulo" formControlName="titulo" />
+        <!-------------------------------INPUT PARA EL TITULO--------------------------------->
+        <div class="mb-4">
+          <label for="titulo"> <i class="bi bi-envelope-fill"></i> Nombre de la tecnologia </label>
+          <input type="titulo" class="form-control" formControlName="titulo" />
         </div>
         <div *ngIf="Titulo?.errors && Titulo?.touched">
           <p *ngIf="Titulo?.hasError('required')" class="error">
-            El titulo es requerido.
+            <strong>El titulo es requerido.</strong>
           </p>
         </div>
-
-        <br />
+        <!-------------------------------INPUT DE EL PORCENTAJE--------------------------------->
         <div class="mb-4">
-          <label for="porcentaje"
-            ><i class="bi bi-envelope-fill"></i> Porcentaje de aprendisaje</label>
-            <br>
-          <input
-            type="porcentaje"
-            formControlName="porcentaje"
-          />
+          <label for="porcentaje"> <i class="bi bi-envelope-fill"></i> Porcentaje de aprendisaje </label>
+          <input type="porcentaje" class="form-control" formControlName="porcentaje" />
         </div>
         <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
           <p *ngIf="Porcentaje?.hasError('required')" class="error">
-            El porcentaje es requerido.
+            <strong>El porcentaje es requerido.</strong>
           </p>
         </div>
-        <br />
+        <!-------------------------------BOTON PARA ENVIAR--------------------------------->
         <div>
-          <button type="submit">Iniciar Sesión</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
         <a routerLink="/">volver</a>
       </form>

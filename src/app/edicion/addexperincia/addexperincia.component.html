@@ -4,50 +4,49 @@
       <h4><i class="bi bi-chat-left-quote"></i>Experiencia</h4>
     </div>
     <div class="mb-1">
+      <!-------------------------------FORMULARIO PARA AGREGAR UNA EXPERIENCIA--------------------------------->
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-        <div>
-          <label for="email">Titulo </label>
-          <input type="titulo" formControlName="titulo" />
+        <!-------------------------------INPUT PARA EL TITULO--------------------------------->
+        <div class="mb-4">
+          <label for="email"> Titulo </label>
+          <input type="titulo" class="form-control" formControlName="titulo" />
         </div>
         <div *ngIf="Titulo?.errors && Titulo?.touched">
           <p *ngIf="Titulo?.hasError('required')" class="error">
-            El titulo es requerido.
+            <strong>El titulo es requerido.</strong>
           </p>
         </div>
-        <br />
-        <div>
-          <label for="exampleInputPassword1" class="form-label"
-            >Area
-          </label>
-          <input
-            type="area"
-            formControlName="area"
-          />
+        <!-------------------------------INPUT PARA EL AREA--------------------------------->
+        <div class="mb-4">
+          <label for="exampleInputPassword1" class="form-label"> Area </label>
+          <input type="area" class="form-control" formControlName="area" />
         </div>
         <div *ngIf="Area?.errors && Area?.touched">
           <p *ngIf="Area?.hasError('required')" class="error">
-            El area es requerida.
+            <strong>El area es requerida.</strong>
           </p>
         </div>
-        <div>
+        <!-------------------------------INPUT PARA LA FECHA DESDE--------------------------------->
+        <div class="mb-4">
           <label for="email">Desde </label>
-          <input type="date" formControlName="desde" />
+          <input type="date" class="form-control" formControlName="desde" />
         </div>
         <div *ngIf="Desde?.errors && Desde?.touched">
           <p *ngIf="Desde?.hasError('required')" class="error">
-            La fecha es requerida.
+            <strong>La fecha es requerida.</strong>
           </p>
         </div>
-        <div>
+        <!-------------------------------INPUT PARA LA FECHA HASTA--------------------------------->
+        <div class="mb-4">
           <label for="email">Hasta </label>
-          <input type="date" formControlName="hasta" />
+          <input type="date" class="form-control" formControlName="hasta" />
         </div>
         <div *ngIf="Hasta?.errors && Hasta?.touched">
           <p *ngIf="Hasta?.hasError('required')" class="error">
-            La fecha es requerida.
+            <strong>La fecha es requerida.</strong>
           </p>
         </div>
-        <br />
+        <!-------------------------------BOTON PARA ENVIAR--------------------------------->
         <div>
           <button type="submit button" class="btn btn-primary">Guardar</button>
         </div>

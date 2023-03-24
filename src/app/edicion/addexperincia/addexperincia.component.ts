@@ -25,7 +25,7 @@ export class AddexperinciaComponent implements OnInit {
   }
 
   get Area() {
-    return this.form.get('titulo');
+    return this.form.get('area');
   }
 
   get Desde() {

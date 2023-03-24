@@ -1,34 +1,34 @@
 <section class="d-flex justify-content-center align-items-center contenido">
   <div class="card col-xs-12 col-sm-6 col-md-6 col-lg-4 p-4">
     <div class="mb-4 d-flex justify-content-start align-items-center">
-      <h4><i class="bi bi-chat-left-quote"></i>Experiencias Laborales</h4>
+      <h4><i class="bi bi-chat-left-quote"></i>Experiencia</h4>
     </div>
     <div class="mb-1">
-      <form id="contacto">
+      <!-------------------------------FORMULARIO PARA AGREGAR UNA EXPERIENCIA--------------------------------->
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <!-------------------------------INPUT PARA EL TITULO--------------------------------->
         <div class="mb-4">
-          <label for="informacion"
-            ><i class="bi bi-envelope-fill"></i> Institucion</label
-          >
-          <input type="text" class="form-control" id="informacion" required />
-          <div class="text-danger"></div>
+          <label for="email"> Titulo </label>
+          <input type="titulo" class="form-control" formControlName="titulo" />
         </div>
+        <div *ngIf="Titulo?.errors && Titulo?.touched">
+          <p *ngIf="Titulo?.hasError('required')" class="error">
+            <strong>El titulo es requerido.</strong>
+          </p>
+        </div>
+        <!-------------------------------INPUT PARA EL AREA--------------------------------->
         <div class="mb-4">
-          <label for="nombre"><i class="bi bi-envelope-fill"></i> Desde</label>
-          <input type="date" class="form-control" id="nombre" required />
-          <div class="text-danger"></div>
+          <label for="exampleInputPassword1" class="form-label"> Area </label>
+          <input type="area" class="form-control" formControlName="area" />
         </div>
-        <div class="mb-4">
-          <label for="nombre"><i class="bi bi-envelope-fill"></i> Hasta</label>
-          <input type="date" class="form-control" id="nombre" required />
-          <div class="text-danger"></div>
+        <div *ngIf="Area?.errors && Area?.touched">
+          <p *ngIf="Area?.hasError('required')" class="error">
+            <strong>El area es requerida.</strong>
+          </p>
         </div>
-        <div class="mb-2">
-          <button
-            id="botton"
-            class="col-12 btn btn-primary d-flex justify-content-between"
-          >
-            <span>Guardar </span><i id="guardar" class="bi bi-cursor-fill"></i>
-          </button>
+        <!-------------------------------BOTON PARA ENVIAR--------------------------------->
+        <div>
+          <button type="submit button" class="btn btn-primary">Guardar</button>
         </div>
         <a routerLink="/">volver</a>
       </form>

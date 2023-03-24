@@ -4,37 +4,51 @@
       <h4><i class="bi bi-chat-left-quote"></i>Acerca de</h4>
     </div>
     <div class="mb-1">
+      <!-------------------------------FORMULARIO PARA CREAR UNA NUEVA PERSONA--------------------------------->
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-        <div>
-          <label for="titulo"
-            ><i class="bi bi-envelope-fill"></i> Nombre</label>
-            <br>
-          <input type="nombre" formControlName="nombre" />
+        <!-------------------------------INPUT PARA EL NOMBRE--------------------------------->
+        <div class="mb-4">
+          <label for="titulo"> <i class="bi bi-envelope-fill"></i> Nombre </label>
+          <input type="nombreCompleto" class="form-control" formControlName="nombreCompleto" />
         </div>
-        <div *ngIf="Nombre?.errors && Nombre?.touched">
-          <p *ngIf="Nombre?.hasError('required')" class="error">
-            El nombre de la persona es requerido.
+        <div *ngIf="NombreCompleto?.errors && NombreCompleto?.touched">
+          <p *ngIf="NombreCompleto?.hasError('required')" class="error">
+            <strong>El nombre de la persona es requerido.</strong>
           </p>
         </div>
-
-        <br />
+        <!-------------------------------INPUT PARA LA INFORMACION--------------------------------->
         <div class="mb-4">
-          <label for="porcentaje"
-            ><i class="bi bi-envelope-fill"></i> Informacion personal</label>
-            <br>
-          <input
-            type="informacion"
-            formControlName="informacion"
-          />
+          <label for="porcentaje"> <i class="bi bi-envelope-fill"></i> Informacion personal </label>
+          <input type="informacion" class="form-control" formControlName="informacion"/>
         </div>
         <div *ngIf="Informacion?.errors && Informacion?.touched">
           <p *ngIf="Informacion?.hasError('required')" class="error">
-            La informacion personal es requerida.
+            <strong>La informacion personal es requerida.</strong>
           </p>
         </div>
-        <br />
+        <!-------------------------------INPUT PARA LA URL DE LA FOTO--------------------------------->
+        <div class="mb-4">
+          <label for="porcentaje"> <i class="bi bi-envelope-fill"></i> Url Foto de perfil </label>
+          <input type="urlFoto" class="form-control" formControlName="urlFoto"/>
+        </div>
+        <div *ngIf="UrlFoto?.errors && UrlFoto?.touched">
+          <p *ngIf="UrlFoto?.hasError('required')" class="error">
+            <strong>La url de la Foto es requerida.</strong>
+          </p>
+        </div>
+        <!-------------------------------INPUT PARA LA EMAIL--------------------------------->
+        <div class="mb-4">
+          <label for="porcentaje"> <i class="bi bi-envelope-fill"></i> Email personal </label>
+          <input type="email" class="form-control" formControlName="email"/>
+        </div>
+        <!-------------------------------INPUT PARA EL CLAVE--------------------------------->
+        <div class="mb-4">
+          <label for="porcentaje"> <i class="bi bi-envelope-fill"></i> Clave personal </label>
+          <input type="clave" class="form-control" formControlName="clave"/>
+        </div>
+        <!-------------------------------BOTON DE SUBMIT--------------------------------->
         <div>
-          <button type="submit">Iniciar Sesión</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
         <a routerLink="/">volver</a>
       </form>
