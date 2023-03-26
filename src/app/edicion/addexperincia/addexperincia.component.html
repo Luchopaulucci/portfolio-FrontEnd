@@ -9,7 +9,7 @@
         <!-------------------------------INPUT PARA EL TITULO--------------------------------->
         <div class="mb-4">
           <label for="email"> Titulo </label>
-          <input type="titulo" class="form-control" formControlName="titulo" />
+          <input type="sting" class="form-control" formControlName="titulo" />
         </div>
         <div *ngIf="Titulo?.errors && Titulo?.touched">
           <p *ngIf="Titulo?.hasError('required')" class="error">
@@ -19,7 +19,7 @@
         <!-------------------------------INPUT PARA EL AREA--------------------------------->
         <div class="mb-4">
           <label for="exampleInputPassword1" class="form-label"> Area </label>
-          <input type="area" class="form-control" formControlName="area" />
+          <input type="string" class="form-control" formControlName="area" placeholder="minimo de 6 caracteres"/>
         </div>
         <div *ngIf="Area?.errors && Area?.touched">
           <p *ngIf="Area?.hasError('required')" class="error">
@@ -48,7 +48,11 @@
         </div>
         <!-------------------------------BOTON PARA ENVIAR--------------------------------->
         <div>
-          <button type="submit button" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+        <br>
+        <div>
+          <button type="button" class="btn btn-primary" (click)="limpiar()">Limpiar</button>
         </div>
         <a routerLink="/">volver</a>
       </form>

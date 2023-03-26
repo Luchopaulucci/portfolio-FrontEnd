@@ -16,10 +16,22 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarHabilidades();
+    console.log(Habilidad);
   }
 
   cargarHabilidades():void{
     this.sHabilidad.listarHabilidad().subscribe(data =>{this.habilidades=data})
+  }
+
+  delete(id:number){
+    if(confirm("Seguro desea eliminar esta Habilidad")){
+      this.sHabilidad.borrarHabilidad(id).subscribe(
+        data => {
+        this.cargarHabilidades();
+      }, err => {
+        alert("Se ha producido un error, intente nuevamente");
+      });
+    }
   }
 
 }

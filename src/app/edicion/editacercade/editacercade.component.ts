@@ -31,18 +31,6 @@ export class EditacercadeComponent implements OnInit {
     return this.form.get('urlFoto');
   }
 
-  get NombreValid() {
-    return this.NombreCompleto?.touched && !this.NombreCompleto.valid;
-  }
-
-  get InformacionValid() {
-    return this.Informacion?.touched && !this.Informacion.valid;
-  }
-
-  get UrlFotoValid() {
-    return this.UrlFoto?.touched && !this.UrlFoto.valid;
-  }
-
   onEnviar(event: Event) {
     event.preventDefault;
     if (this.form.valid) {

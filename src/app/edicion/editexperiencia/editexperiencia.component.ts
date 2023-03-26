@@ -26,14 +26,6 @@ export class EditexperienciaComponent implements OnInit {
     return this.form.get('area');
   }
 
-  get TituloValid() {
-    return this.Titulo?.touched && !this.Titulo.valid;
-  }
-
-  get AreaValid() {
-    return this.Area?.touched && !this.Area.valid;
-  }
-
   onEnviar(event: Event){
     // detiene la propagacion o ejecucion del submit
     event.preventDefault;

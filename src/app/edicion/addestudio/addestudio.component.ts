@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EducacionServiceService } from 'src/app/servicios/educacion.service.service';
 
 @Component({
   selector: 'app-addestudio',
   templateUrl: './addestudio.component.html',
-  styleUrls: ['./addestudio.component.css']
+  styleUrls: ['./addestudio.component.css'],
 })
 export class AddestudioComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private sEducacion: EducacionServiceService
+  ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
-      institucion: ['',[Validators.required]],
+      institucion: ['', [Validators.required]],
       desde: ['', [Validators.required]],
       hasta: ['', [Validators.required]],
     });
@@ -36,37 +40,26 @@ export class AddestudioComponent implements OnInit {
     return this.form.get('hasta');
   }
 
-  get TituloValid() {
-    return this.Titulo?.touched && !this.Titulo.valid;
+  onCreate(): void {
+    this.sEducacion.crearEducacion(this.form.value).subscribe((data) => {
+      alert('Estudio Añadido');
+      window.location.reload();
+    });
   }
 
-  get InstitucionValid() {
-    return this.Institucion?.touched && !this.Institucion.valid;
+  limpiar(): void {
+    this.form.reset();
   }
-
-  get DesdeValid() {
-    return this.Desde?.touched && !this.Desde.valid;
-  }
-
-  get HastaValid() {
-    return this.Hasta?.touched && !this.Hasta.valid;
-  }
-
-
 
   onEnviar(event: Event) {
-    // detiene la propagacion o ejecucion del submit
     event.preventDefault;
     if (this.form.valid) {
-      // llamar al servicio para enviar datos al server
-      // logica extra
-      alert('El formulario ha sido enviado con exito!');
+      this.onCreate();
     } else {
-      this.form.markAllAsTouched();
       alert(
         'Se produjo un error al enviar el formulario! Revise los datos ingresados.'
       );
+      this.form.markAllAsTouched();
     }
   }
-
 }

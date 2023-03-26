@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProyectosServiceService } from 'src/app/servicios/proyectos.service.service';
 
 @Component({
   selector: 'app-addproyecto',
@@ -9,7 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddproyectoComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private sProyecto: ProyectosServiceService
+  ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
       informacion: ['', [Validators.required]],
@@ -33,28 +37,26 @@ export class AddproyectoComponent implements OnInit {
     return this.form.get('hasta');
   }
 
-  get TituloValid() {
-    return this.Titulo?.touched && !this.Titulo.valid;
+  onCreate(): void {
+    this.sProyecto.crearProyectos(this.form.value).subscribe((data) => {
+      alert('Proyecto Añadido');
+      window.location.reload();
+    });
   }
-  get InformacionValid() {
-    return this.Informacion?.touched && !this.Informacion.valid;
-  }
-  get DesdeValid() {
-    return this.Desde?.touched && !this.Desde.valid;
-  }
-  get HstaValid() {
-    return this.Hasta?.touched && !this.Hasta.valid;
+
+  limpiar(): void {
+    this.form.reset();
   }
 
   onEnviar(event: Event) {
     event.preventDefault;
     if (this.form.valid) {
-      alert('El formulario ha sido enviado con exito!');
+      this.onCreate();
     } else {
-      this.form.markAllAsTouched();
       alert(
         'Se produjo un error al enviar el formulario! Revise los datos ingresados.'
       );
+      this.form.markAllAsTouched();
     }
   }
 }

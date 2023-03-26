@@ -21,10 +21,6 @@ export class EditskillComponent implements OnInit {
     return this.form.get('porcentaje');
   }
 
-  get PorcentajeValid() {
-    return this.Porcentaje?.touched && !this.Porcentaje?.valid;
-  }
-
   onEnviar(event: Event) {
     event.preventDefault;
     if (this.form.valid) {

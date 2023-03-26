@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HabilidadService } from 'src/app/servicios/habilidad.service';
 
 @Component({
   selector: 'app-addskill',
@@ -9,7 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddskillComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private sHabilidad: HabilidadService
+  ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
       porcentaje: ['', [Validators.required]],
@@ -26,23 +30,26 @@ export class AddskillComponent implements OnInit {
     return this.form.get('porcentaje');
   }
 
-  get TituloValid() {
-    return this.Titulo?.touched && !this.Titulo?.valid;
+  onCreate(): void {
+    this.sHabilidad.crearHabilidad(this.form.value).subscribe((data) => {
+      alert('Habilidad Añadida');
+      window.location.reload();
+    });
   }
 
-  get PorcentajeValid() {
-    return this.Porcentaje?.touched && !this.Porcentaje?.valid;
+  limpiar(): void {
+    this.form.reset();
   }
 
   onEnviar(event: Event) {
     event.preventDefault;
     if (this.form.valid) {
-      alert('Todo salio bien ¡Enviar formuario!');
+      this.onCreate();
     } else {
-      this.form.markAllAsTouched();
       alert(
         'Se produjo un error al enviar el formulario! Revise los datos ingresados.'
       );
+      this.form.markAllAsTouched();
     }
   }
 }

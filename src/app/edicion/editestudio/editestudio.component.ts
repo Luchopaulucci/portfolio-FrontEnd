@@ -36,22 +36,6 @@ export class EditestudioComponent implements OnInit {
     return this.form.get('hasta');
   }
 
-  get TituloValid() {
-    return this.Titulo?.touched && !this.Titulo.valid;
-  }
-
-  get InstitucionValid() {
-    return this.Institucion?.touched && !this.Institucion.valid;
-  }
-
-  get DesdeValid() {
-    return this.Desde?.touched && !this.Desde.valid;
-  }
-
-  get HastaValid() {
-    return this.Hasta?.touched && !this.Hasta.valid;
-  }
-
   onEnviar(event: Event) {
     event.preventDefault;
     if (this.form.valid) {

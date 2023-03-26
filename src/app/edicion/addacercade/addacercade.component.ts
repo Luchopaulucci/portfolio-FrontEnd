@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AcercadeServiceService } from 'src/app/servicios/acercade.service.service';
 
 @Component({
   selector: 'app-addacercade',
@@ -9,13 +10,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddacercadeComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private sPersona: AcercadeServiceService
+  ) {
     this.form = this.formBuilder.group({
       nombreCompleto: ['', [Validators.required]],
       informacion: ['', [Validators.required]],
       urlFoto: ['', [Validators.required]],
       email: [''],
-      clave: ['']
+      clave: [''],
     });
   }
 
@@ -29,39 +33,38 @@ export class AddacercadeComponent implements OnInit {
     return this.form.get('informacion');
   }
 
-  get UrlFoto(){
+  get UrlFoto() {
     return this.form.get('urlFoto');
   }
 
-  get Email(){
+  get Email() {
     return this.form.get('email');
   }
 
-  get Clave(){
+  get Clave() {
     return this.form.get('clave');
   }
 
-  get NombreValid() {
-    return this.NombreCompleto?.touched && !this.NombreCompleto.valid;
+  onCreate(): void {
+    this.sPersona.crearPersona(this.form.value).subscribe((data) => {
+      alert('Persona Añadida');
+      window.location.reload();
+    });
   }
 
-  get InformacionValid() {
-    return this.Informacion?.touched && !this.Informacion.valid;
-  }
-
-  get UrlFotoValid() {
-    return this.UrlFoto?.touched && !this.UrlFoto.valid;
+  limpiar(): void {
+    this.form.reset();
   }
 
   onEnviar(event: Event) {
     event.preventDefault;
     if (this.form.valid) {
-      alert('El formulario ha sido enviado con exito!');
+      this.onCreate();
     } else {
-      this.form.markAllAsTouched();
       alert(
         'Se produjo un error al enviar el formulario! Revise los datos ingresados.'
       );
+      this.form.markAllAsTouched();
     }
   }
 }

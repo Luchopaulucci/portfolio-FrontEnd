@@ -12,7 +12,7 @@
       <div class="row mb-12">
         <div class="col-12 align-items-center">
           <p class="h5">{{ habilidad.titulo }}</p>
-          <div class="progress mb-5 rounded-5" style="height: 7px">
+          <div class="progress mb-5 rounded-5" style="height: 15px">
             <div
               class="progress-bar"
               role="progressbar"
@@ -27,12 +27,8 @@
         </div>
       </div>
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button
-          type="button"
-          class="btn btn-primary"
-          routerLink="/Editar-habilidad"
-        >
-          <i class="fa-solid fa-pen"></i>
+        <button type="button" class="btn btn-primary" routerLink="/Editar-habilidad" >
+          <i class="fa-solid fa-pen" (click)="delete(habilidad.id)"></i>
         </button>
         <button type="button" class="btn btn-primary">
           <i class="fa-solid fa-trash"></i>
