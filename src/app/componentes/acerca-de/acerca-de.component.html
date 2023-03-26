@@ -41,7 +41,11 @@
             {{dato.informacion}}
           </p>
         </div>
+        <button type="button" class="btn btn-primary">
+          <i class="fa-solid fa-trash" (click)="delete(dato.id)"></i>
+        </button>
       </div>
     </div>
+    </li>
   </div>
 </section>

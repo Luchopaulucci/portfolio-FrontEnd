@@ -22,7 +22,6 @@ import { AddacercadeComponent } from './edicion/addacercade/addacercade.componen
 import { AddexperinciaComponent } from './edicion/addexperincia/addexperincia.component';
 import { AddskillComponent } from './edicion/addskill/addskill.component';
 import { AddproyectoComponent } from './edicion/addproyecto/addproyecto.component';
-import { EliminarComponent } from './edicion/eliminar/eliminar.component';
 import { EditacercadeComponent } from './edicion/editacercade/editacercade.component';
 import { EditestudioComponent } from './edicion/editestudio/editestudio.component';
 import { EditexperienciaComponent } from './edicion/editexperiencia/editexperiencia.component';
@@ -49,7 +48,6 @@ import { EditskillComponent } from './edicion/editskill/editskill.component';
     AddexperinciaComponent,
     AddskillComponent,
     AddproyectoComponent,
-    EliminarComponent,
     EditacercadeComponent,
     EditestudioComponent,
     EditexperienciaComponent,

@@ -21,4 +21,15 @@ export class EducacionComponent implements OnInit {
     this.sEducacion.listarEducacion().subscribe(data =>{this.educaciones=data})
   }
 
+  delete(id:number){
+    if(confirm("Seguro desea eliminar esta Habilidad")){
+      this.sEducacion.borrarEducacion(id).subscribe(
+        data => {
+        this.cargarEducacion();
+      }, err => {
+        alert("Se ha producido un error, intente nuevamente");
+      });
+    }
+  }
+
 }

@@ -16,7 +16,6 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarHabilidades();
-    console.log(Habilidad);
   }
 
   cargarHabilidades():void{

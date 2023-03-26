@@ -14,7 +14,6 @@
 .agregar-eliminar{
     display: flex;
     justify-content: center;
-    letter-spacing: 25px;
     padding-bottom: 25px;
 }
 .lista{

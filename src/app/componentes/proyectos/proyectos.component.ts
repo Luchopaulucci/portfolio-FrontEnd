@@ -22,4 +22,15 @@ export class ProyectosComponent implements OnInit {
     this.sProyecto.listarProyectos().subscribe(data =>{this.proyectos=data})
   }
 
+  delete(id:number){
+    if(confirm("Seguro desea eliminar esta Habilidad")){
+      this.sProyecto.borrarProyectos(id).subscribe(
+        data => {
+        this.cargarProyectos();
+      }, err => {
+        alert("Se ha producido un error, intente nuevamente");
+      });
+    }
+  }
+
 }

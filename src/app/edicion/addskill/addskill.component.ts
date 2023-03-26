@@ -16,7 +16,7 @@ export class AddskillComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
-      porcentaje: ['', [Validators.required]],
+      porcentaje: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
     });
   }
 

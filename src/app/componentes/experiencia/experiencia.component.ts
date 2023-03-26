@@ -22,4 +22,15 @@ export class ExperienciaComponent implements OnInit {
     this.sExperiencia.listarExperiencias().subscribe(data =>{this.experiencias=data})
   }
 
+  delete(id:number){
+    if(confirm("Seguro desea eliminar esta Habilidad")){
+      this.sExperiencia.borrarExperiencia(id).subscribe(
+        data => {
+        this.cargarExperiencia();
+      }, err => {
+        alert("Se ha producido un error, intente nuevamente");
+      });
+    }
+  }
+
 }

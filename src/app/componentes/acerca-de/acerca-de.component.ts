@@ -21,6 +21,17 @@ export class AcercaDeComponent implements OnInit {
     this.sPersona.listarPersonas().subscribe(data =>{this.perfil=data})
   }
 
+  delete(id:number){
+    if(confirm("Seguro desea eliminar esta Habilidad")){
+      this.sPersona.borrarPersona(id).subscribe(
+        data => {
+        this.cargarPersona();
+      }, err => {
+        alert("Se ha producido un error, intente nuevamente");
+      });
+    }
+  }
+
 }
 
 
