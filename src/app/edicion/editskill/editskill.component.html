@@ -1,15 +1,25 @@
 <section class="d-flex justify-content-center align-items-center contenido">
   <div class="card col-xs-12 col-sm-6 col-md-6 col-lg-4 p-4">
     <div class="mb-4 d-flex justify-content-start align-items-center">
-      <h4><i class="bi bi-chat-left-quote"></i>Habilidad</h4>
+      <h4><i class="bi bi-chat-left-quote"></i>Editar la habilidad</h4>
     </div>
     <div class="mb-1">
       <!-------------------------------FORMULARIO PARA AGREGAR UNA HABILIDAD--------------------------------->
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <!-------------------------------INPUT PARA EL TITULO--------------------------------->
+        <div class="mb-4">
+          <label for="titulo"> <i class="bi bi-envelope-fill"></i> Nombre de la tecnologia </label>
+          <input type="texto" class="form-control" formControlName="titulo" id="titulo" name="titulo" [(ngModel)]="habilidad.titulo" required/>
+        </div>
+        <div *ngIf="Titulo?.errors && Titulo?.touched">
+          <p *ngIf="Titulo?.hasError('required')" class="error">
+            <strong>El titulo es requerido.</strong>
+          </p>
+        </div>
         <!-------------------------------INPUT DE EL PORCENTAJE--------------------------------->
         <div class="mb-4">
           <label for="porcentaje"> <i class="bi bi-envelope-fill"></i> Porcentaje de aprendisaje </label>
-          <input type="porcentaje" class="form-control" formControlName="porcentaje" />
+          <input type="text" class="form-control" formControlName="porcentaje" id="porcentaje" name="porcentaje" [(ngModel)]="habilidad.porcentaje" required/>
         </div>
         <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
           <p *ngIf="Porcentaje?.hasError('required')" class="error">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AcercadeServiceService } from 'src/app/servicios/acercade.service.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class AddacercadeComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private sPersona: AcercadeServiceService
+    private sPersona: AcercadeServiceService,
+    private router: Router
   ) {
     this.form = this.formBuilder.group({
       nombreCompleto: ['', [Validators.required]],
@@ -48,7 +50,7 @@ export class AddacercadeComponent implements OnInit {
   onCreate(): void {
     this.sPersona.crearPersona(this.form.value).subscribe((data) => {
       alert('Persona Añadida');
-      window.location.reload();
+      this.router.navigate(['']);
     });
   }
 

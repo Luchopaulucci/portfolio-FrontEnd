@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EducacionServiceService } from 'src/app/servicios/educacion.service.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class AddestudioComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private sEducacion: EducacionServiceService
+    private sEducacion: EducacionServiceService,
+    private router: Router
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
@@ -43,7 +45,7 @@ export class AddestudioComponent implements OnInit {
   onCreate(): void {
     this.sEducacion.crearEducacion(this.form.value).subscribe((data) => {
       alert('Estudio Añadido');
-      window.location.reload();
+      this.router.navigate(['']);
     });
   }
 

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Persona } from 'src/app/model/persona';
+import { AcercadeServiceService } from 'src/app/servicios/acercade.service.service';
 
 @Component({
   selector: 'app-editacercade',
@@ -8,16 +11,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditacercadeComponent implements OnInit {
   form: FormGroup;
+  persona: Persona = null;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private sPersona: AcercadeServiceService,
+    private activatedRouter: ActivatedRoute,
+    private router: Router
+  ) {
     this.form = this.formBuilder.group({
       nombreCompleto: ['', [Validators.required]],
       informacion: ['', [Validators.required]],
       urlFoto: ['', [Validators.required]],
     });
   }
-
-  ngOnInit(): void {}
 
   get NombreCompleto() {
     return this.form.get('nombreCompleto');
@@ -31,15 +38,29 @@ export class EditacercadeComponent implements OnInit {
     return this.form.get('urlFoto');
   }
 
-  onEnviar(event: Event) {
-    event.preventDefault;
-    if (this.form.valid) {
-      alert('El formulario ha sido enviado con exito!');
-    } else {
-      this.form.markAllAsTouched();
-      alert(
-        'Se produjo un error al enviar el formulario! Revise los datos ingresados.'
-      );
-    }
+  ngOnInit(): void {
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.sPersona.findPersona(id).subscribe(
+      data => {
+        this.persona = data;
+      }, err => {
+        alert("Error al modificar la habilidad")
+        this.router.navigate(['']);
+      }
+    )
   }
+
+  onUpdate() {
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.sPersona.modificarPersona(id, this.persona).subscribe(
+      data => {
+        this.router.navigate([''])
+      }, err =>{
+        alert("Error al modificar la habilidad")
+        this.router.navigate(['']);
+      }
+    )
+  }
+
+
 }

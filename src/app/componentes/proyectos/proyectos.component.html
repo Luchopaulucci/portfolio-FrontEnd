@@ -1,7 +1,7 @@
 <section id="proyectos" class="section gray-bg">
   <div class="row">
     <h2 class="h3 text-center titulo">Proyectos</h2>
-    <div class="agregar-eliminar">
+    <div *ngIf="modoEdit" class="agregar-eliminar">
       <button type="button" class="btn btn-primary" routerLink="/Add-proyecto">
         <i class="fa-solid fa-plus"></i>
       </button>
@@ -14,8 +14,9 @@
           <p>{{ proyecto.informacion }}</p>
           <p>Inicio: {{ proyecto.desde }}</p>
           <p>Fin: {{ proyecto.hasta }}</p>
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary" routerLink="/Editar-estudio">
+          <p>Url: {{proyecto.urlProyecto}}</p>
+          <div *ngIf="modoEdit" class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary" routerLink="/Editar-proyecto/{{proyecto.id}}">
               <i class="fa-solid fa-pen"></i>
             </button>
             <button type="button" class="btn btn-primary">

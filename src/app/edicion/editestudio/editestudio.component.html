@@ -1,15 +1,15 @@
 <section class="d-flex justify-content-center align-items-center contenido">
   <div class="card col-xs-12 col-sm-6 col-md-6 col-lg-4 p-4">
     <div class="mb-4 d-flex justify-content-start align-items-center">
-      <h4><i class="bi bi-chat-left-quote"></i>Estudio</h4>
+      <h4><i class="bi bi-chat-left-quote"></i>Editar el estudio</h4>
     </div>
     <div class="mb-1">
       <!-------------------------------FORMULARIO PARA AGREGAR UN ESTUDIO--------------------------------->
-      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+      <form [formGroup]="form" (ngSubmit)="onUpdate()">
         <!-------------------------------INPUT PARA EL TITULO--------------------------------->
         <div class="mb-4">
-          <label for="email">Titulo </label>
-          <input type="titulo" class="form-control" formControlName="titulo" />
+          <label for="titulo">Titulo </label>
+          <input type="text" class="form-control" formControlName="titulo" id="titulo" name="titulo" [(ngModel)]="estudio.titulo" required/>
         </div>
         <div *ngIf="Titulo?.errors && Titulo?.touched">
           <p *ngIf="Titulo?.hasError('required')" class="error">
@@ -18,8 +18,8 @@
         </div>
         <!-------------------------------INPUT PARA LA INSTITUCION CORRESPONDIENTE--------------------------------->
         <div class="mb-4">
-          <label for="exampleInputPassword1" class="form-label">Institucion</label>
-          <input type="institucion" class="form-control" formControlName="institucion"/>
+          <label for="institucion" class="form-label">Institucion</label>
+          <input type="text" class="form-control" formControlName="institucion" id="institucion" name="institucion" [(ngModel)]="estudio.institucion" required/>
         </div>
         <div *ngIf="Institucion?.errors && Institucion?.touched">
           <p *ngIf="Institucion?.hasError('required')" class="error">
@@ -28,8 +28,8 @@
         </div>
         <!-------------------------------INPUT PARA LA FECHA DESDE--------------------------------->
         <div class="mb-4">
-          <label for="email">Desde </label>
-          <input type="date" class="form-control" formControlName="desde" />
+          <label for="desde">Desde </label>
+          <input type="date" class="form-control" formControlName="desde" id="titulo" name="titulo" [(ngModel)]="estudio.desde" required/>
         </div>
         <div *ngIf="Desde?.errors && Desde?.touched">
           <p *ngIf="Desde?.hasError('required')" class="error">
@@ -38,8 +38,8 @@
         </div>
         <!-------------------------------INPUT PARA LA FECHA HASTA--------------------------------->
         <div>
-          <label for="email">Hasta </label>
-          <input type="date" class="form-control" formControlName="hasta" />
+          <label for="hasta">Hasta </label>
+          <input type="date" class="form-control" formControlName="hasta" id="titulo" name="titulo" [(ngModel)]="estudio.hasta" required/>
         </div>
         <div *ngIf="Hasta?.errors && Hasta?.touched">
           <p *ngIf="Hasta?.hasError('required')" class="error">

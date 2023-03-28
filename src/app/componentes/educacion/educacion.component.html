@@ -1,12 +1,11 @@
 <section id="educacion" class="section gray-bg">
   <div class="col-12">
     <h2 class="h3 titulo text-center">Educacion</h2>
-    <div class="agregar-eliminar">
+    <div *ngIf="modoEdit" class="agregar-eliminar">
       <button type="button" class="btn btn-primary" routerLink="/Add-estudio">
         <i class="fa-solid fa-plus"></i>
       </button>
     </div>
-
     <li *ngFor="let educacion of educaciones" class="lista">
       <div class="card" aria-hidden="true">
         <div class="card-body">
@@ -14,12 +13,8 @@
           <p>Institucion: {{educacion.institucion}}</p>
           <p>Inicio: {{ educacion.desde }}</p>
           <p>Fin: {{ educacion.hasta }}</p>
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button
-              type="button"
-              class="btn btn-primary"
-              routerLink="/Editar-estudio"
-            >
+          <div *ngIf="modoEdit" class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary" routerLink="/Editar-estudio/{{educacion.id}}">
               <i class="fa-solid fa-pen"></i>
             </button>
             <button type="button" class="btn btn-primary">

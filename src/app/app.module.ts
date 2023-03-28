@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
@@ -27,6 +26,8 @@ import { EditestudioComponent } from './edicion/editestudio/editestudio.componen
 import { EditexperienciaComponent } from './edicion/editexperiencia/editexperiencia.component';
 import { EditproyectoComponent } from './edicion/editproyecto/editproyecto.component';
 import { EditskillComponent } from './edicion/editskill/editskill.component';
+import { AcercadeServiceService } from './servicios/acercade.service.service';
+import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { EditskillComponent } from './edicion/editskill/editskill.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AcercadeServiceService, {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

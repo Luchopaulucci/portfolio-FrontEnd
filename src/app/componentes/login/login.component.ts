@@ -1,54 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Persona } from 'src/app/model/persona';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  persona: Persona = new Persona("nombreCompleto", "informacion", "id", "urlFoto","email","clave");
 
-  // Inyectar en el constructor el formBuilder
-  constructor(private formBuilder: FormBuilder){ 
-    ///Creamos el grupo de controles para el formulario de login
-    this.form= this.formBuilder.group({
-      password:['',[Validators.required, Validators.minLength(8)]],
-      email:['', [Validators.required, Validators.email]],
-   })
+  constructor(
+    private formBuilder: FormBuilder,
+    private ruta: Router,
+    private authService: AutenticacionService
+  ) {
+    this.form = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      clave: ['', [Validators.required, Validators.minLength(4)]],
+    });
   }
 
   ngOnInit() {}
 
-  get Password(){
-    return this.form.get("password");
+  get Clave() {
+    return this.form.get('clave');
   }
- 
-  get Mail(){
-   return this.form.get("email");
-  }
-
-  get PasswordValid(){
-    return this.Password?.touched && !this.Password?.valid;
+  get Mail() {
+    return this.form.get('email');
   }
 
-  get MailValid() {
-    return false
-  }
-
-  onEnviar(event: Event){
-    // Detenemos la propagación o ejecución del compotamiento submit de un form
-    event.preventDefault; 
- 
-    if (this.form.valid){
-      // Llamamos a nuestro servicio para enviar los datos al servidor
-      // También podríamos ejecutar alguna lógica extra
-      alert("Todo salio bien ¡Enviar formuario!")
-    }else{
-      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
-      this.form.markAllAsTouched(); 
-    }
- 
+  onEnviar(event: Event) {
+    event.preventDefault;
+    this.authService.loginPersona(this.form.value).subscribe(data =>
+      {
+        console.log("DATA: " + JSON.stringify(data));
+      })
+      window.location.reload();
   }
 }

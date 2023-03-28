@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class AddskillComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private sHabilidad: HabilidadService
+    private sHabilidad: HabilidadService,
+    private router: Router
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
@@ -31,14 +33,15 @@ export class AddskillComponent implements OnInit {
   }
 
   onCreate(): void {
-    this.sHabilidad.crearHabilidad(this.form.value).subscribe((data) => {
-      alert('Habilidad Añadida');
-      window.location.reload();
-    });
-  }
-
-  limpiar(): void {
-    this.form.reset();
+    this.sHabilidad.crearHabilidad(this.form.value).subscribe(
+      data => {
+        alert('Habilidad Añadida');
+        this.router.navigate(['']);
+    }, err =>{
+      alert("Fallo")
+      this.router.navigate(['']);
+    }
+    )
   }
 
   onEnviar(event: Event) {
@@ -46,10 +49,13 @@ export class AddskillComponent implements OnInit {
     if (this.form.valid) {
       this.onCreate();
     } else {
-      alert(
-        'Se produjo un error al enviar el formulario! Revise los datos ingresados.'
-      );
+      alert('Se produjo un error al enviar el formulario! Revise los datos ingresados.');
       this.form.markAllAsTouched();
     }
   }
+
+  limpiar(): void {
+    this.form.reset();
+  }
+
 }

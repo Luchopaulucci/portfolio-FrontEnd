@@ -14,21 +14,22 @@ import { EditestudioComponent } from './edicion/editestudio/editestudio.componen
 import { EditexperienciaComponent } from './edicion/editexperiencia/editexperiencia.component';
 import { EditproyectoComponent } from './edicion/editproyecto/editproyecto.component';
 import { EditskillComponent } from './edicion/editskill/editskill.component';
+import { GuardService } from './servicios/guard.service';
 
 const routes: Routes = [
-  {path: '', component: IndexComponent,},
+  {path: '', component: IndexComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Acercade', component:AcercaDeComponent},
-  {path: 'Add-acercade', component:AddacercadeComponent},
-  {path: 'Editar-acercade', component:EditacercadeComponent},
+  {path: 'Add-acercade', component:AddacercadeComponent, canActivate: [GuardService]},
+  {path: 'Editar-acercade/:id', component:EditacercadeComponent, canActivate: [GuardService]},
   {path: 'Add-experiencia', component:AddexperinciaComponent},
-  {path: 'Editar-experiencia', component:EditexperienciaComponent},
+  {path: 'Editar-experiencia/:id', component:EditexperienciaComponent},
   {path: 'Add-estudio', component:AddestudioComponent},
-  {path: 'Editar-estudio', component:EditproyectoComponent},
+  {path: 'Editar-estudio/:id', component:EditestudioComponent},
   {path: 'Add-habilidad', component:AddskillComponent},
-  {path: 'Editar-habilidad', component:EditskillComponent},
+  {path: 'Editar-habilidad/:id', component:EditskillComponent},
   {path: 'Add-proyecto', component:AddproyectoComponent},
-  {path: 'Editar-proyecto', component:EditproyectoComponent},
+  {path: 'Editar-proyecto/:id', component:EditproyectoComponent},
   {path: '**', component:Pagina404Component}
 ];
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProyectosServiceService } from 'src/app/servicios/proyectos.service.service';
 
 @Component({
@@ -12,13 +13,15 @@ export class AddproyectoComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private sProyecto: ProyectosServiceService
+    private sProyecto: ProyectosServiceService,
+    private router: Router
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
       informacion: ['', [Validators.required]],
       desde: ['', [Validators.required]],
       hasta: ['', [Validators.required]],
+      urlProyecto: ['', [Validators.required]],
     });
   }
 
@@ -36,11 +39,14 @@ export class AddproyectoComponent implements OnInit {
   get Hasta() {
     return this.form.get('hasta');
   }
+  get UrlProyecto() {
+    return this.form.get('urlProyecto');
+  }
 
   onCreate(): void {
     this.sProyecto.crearProyectos(this.form.value).subscribe((data) => {
       alert('Proyecto Añadido');
-      window.location.reload();
+      this.router.navigate(['']);
     });
   }
 

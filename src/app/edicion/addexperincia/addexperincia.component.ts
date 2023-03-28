@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ExperienciaServiceService } from 'src/app/servicios/experiencia.service.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class AddexperinciaComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private sExperiencia: ExperienciaServiceService
+    private sExperiencia: ExperienciaServiceService,
+    private router: Router
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
@@ -44,7 +46,7 @@ export class AddexperinciaComponent implements OnInit {
   onCreate(): void {
     this.sExperiencia.crearExperiencia(this.form.value).subscribe(data => {
       alert('Experiencia Añadida');
-      window.location.reload();
+      this.router.navigate(['']);
     });
   }
 
