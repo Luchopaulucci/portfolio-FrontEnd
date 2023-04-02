@@ -1,0 +1,101 @@
+[33mcommit 1d3a5f9bb6906cad03b8739642275506a1df5ac4[m[33m ([m[1;36mHEAD -> [m[1;32mdesarollo[m[33m, [m[1;33mtag: v1.0.0[m[33m, [m[1;31morigin/desarollo[m[33m)[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Tue Mar 28 02:36:27 2023 -0300
+
+    se agrega el login
+
+[33mcommit b6149b3499859043270f4d2a0c6cddf569b726bc[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Mon Mar 27 02:13:04 2023 -0300
+
+    se agregan todo el crud
+
+[33mcommit 9d92452715168db08b9a2acdc779b01cfbfc113c[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Sun Mar 26 17:19:50 2023 -0300
+
+    se agregan los botones de liminar
+
+[33mcommit ce78ea8c02ec5f7793cd253c50953ec4ba6082a6[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Sun Mar 26 05:59:06 2023 -0300
+
+    se colocan los botones para agregar
+
+[33mcommit 1d0f891c9a761546046226cac9df881ac89f1d8a[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Fri Mar 24 03:45:54 2023 -0300
+
+    :tada: se arregan los botones de editar y agregar(estilos y validaciones andando)
+
+[33mcommit 94252a3a8ac9a14dc065d8673c4ab2a0b66eb657[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Thu Mar 23 11:54:42 2023 -0300
+
+    se agrega las vistas dinamicas
+
+[33mcommit 43246a53cf20e4af4b511bbe011311c3da797688[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Thu Mar 23 00:51:08 2023 -0300
+
+    se agrega el mostrar de experiencia
+
+[33mcommit 68401b00e92eda12abbeb6ded3121dbab5a645a6[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Thu Feb 16 17:38:03 2023 -0300
+
+    :sparkles: Se agregan los modelos de las entidades
+
+[33mcommit 2f5f5cf47a87b301ade70591e74dc05e69f8f1f4[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Tue Dec 27 02:42:08 2022 -0300
+
+    control en los add
+
+[33mcommit 9f5caa69937eadfa64241268d31a916032f22fab[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Sat Dec 24 03:16:16 2022 -0300
+
+    dashboard
+
+[33mcommit 4a545ddd884036f62527b63b3597cabd11e04526[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Fri Dec 23 01:32:45 2022 -0300
+
+    agrega el servicio
+
+[33mcommit 128255b6e7b9d0af20b026d13a7513c79e250d2c[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Tue Dec 20 23:55:39 2022 -0300
+
+    agregan botones de eliminar
+
+[33mcommit d5a15159d987fc0c504779f1bda966748b22fe56[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Tue Dec 13 00:48:05 2022 -0300
+
+    agregan los dashboards
+
+[33mcommit d995586d40a90cea479a7b2c0ac281a465594540[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Mon Dec 12 02:56:44 2022 -0300
+
+    agrego inicio
+
+[33mcommit bb909de8045186e2cb67295d30425a52ca9d1fca[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Sun Dec 11 21:18:10 2022 -0300
+
+    componentes y ruteo
+
+[33mcommit c4fb5405dc3844374e4077b244e165ab637507cd[m
+Author: Luchopaulucci <luchopaluch@gmail.com>
+Date:   Sun Dec 11 18:12:24 2022 -0300
+
+    primer commit
+
+[33mcommit b32779cf91d6292126eff0f646746dc3f1d9060a[m
+Author: luciano <luchopaluch@gmail.com>
+Date:   Thu Oct 27 17:17:19 2022 -0300
+
+    initial commit
