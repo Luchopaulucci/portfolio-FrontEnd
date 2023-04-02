@@ -1,7 +1,7 @@
 <form class="login" [formGroup]="form" (ngSubmit)="onEnviar($event)">
   <div>
-    <h3 class="texto"> |- INICIO DE SESION -|</h3>
-    <!---------------------INPUT PARA EL EMAIL--------------------------->
+    <h3 class="texto">|- INICIO DE SESION -|</h3>
+
     <div>
       <label for="email" class="texto">Email: </label>
       <br />
@@ -11,18 +11,19 @@
         formControlName="email"
         class="form-control"
         placeholder="aca va el email"
+        [(ngModel)]="persona.email"
       />
     </div>
-    <div *ngIf="Mail?.errors && Mail?.touched">
-      <p *ngIf="Mail?.hasError('required')" class="error">
+    <div *ngIf="Email?.errors && Email?.touched">
+      <p *ngIf="Email?.hasError('required')" class="error">
         El email es requerido.
       </p>
-      <p *ngIf="Mail?.hasError('email')" class="error">
+      <p *ngIf="Email?.hasError('email')" class="error">
         El formato del email debe ser válido.
       </p>
     </div>
     <br />
-    <!---------------------INPUT PARA LA CONTRASEÑA--------------------------->
+
     <div>
       <label for="clave" class="texto">Password: </label>
       <br />
@@ -31,6 +32,7 @@
         formControlName="clave"
         class="form-control"
         placeholder="aca va la contraseña"
+        [(ngModel)]="persona.clave"
       />
     </div>
     <div *ngIf="Clave?.errors && Clave?.touched">
@@ -41,10 +43,10 @@
         El password debe ser de 8 o más caracteres.
       </p>
     </div>
-    <!---------------------BOTON PAR ENVIAR EL FORMULARIO--------------------------->
-    <br>
+
+    <br />
     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-    <br>
+    <br />
     <a routerLink="/" class="texto" type="submit">Volver</a>
   </div>
 </form>

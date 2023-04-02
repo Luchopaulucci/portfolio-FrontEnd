@@ -10,7 +10,6 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
   styleUrls: ['./acerca-de.component.css'],
 })
 export class AcercaDeComponent implements OnInit {
-
   perfil: Persona[] = [];
   modoEdit: any;
 
@@ -20,9 +19,9 @@ export class AcercaDeComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.cargarPersona();
-    if(sessionStorage.getItem('currentUser') == "null"){
+    if (sessionStorage.getItem('currentUser') == 'null') {
       this.modoEdit = false;
-    } else if(sessionStorage.getItem('currentUser') == null){
+    } else if (sessionStorage.getItem('currentUser') == null) {
       this.modoEdit = false;
     } else {
       this.modoEdit = true;

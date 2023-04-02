@@ -14,23 +14,23 @@ import { EditestudioComponent } from './edicion/editestudio/editestudio.componen
 import { EditexperienciaComponent } from './edicion/editexperiencia/editexperiencia.component';
 import { EditproyectoComponent } from './edicion/editproyecto/editproyecto.component';
 import { EditskillComponent } from './edicion/editskill/editskill.component';
-import { GuardService } from './servicios/guard.service';
+import { GuardGuard } from './servicios/guard.guard';
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Acercade', component:AcercaDeComponent},
-  {path: 'Add-acercade', component:AddacercadeComponent, canActivate: [GuardService]},
-  {path: 'Editar-acercade/:id', component:EditacercadeComponent, canActivate: [GuardService]},
-  {path: 'Add-experiencia', component:AddexperinciaComponent},
-  {path: 'Editar-experiencia/:id', component:EditexperienciaComponent},
-  {path: 'Add-estudio', component:AddestudioComponent},
-  {path: 'Editar-estudio/:id', component:EditestudioComponent},
-  {path: 'Add-habilidad', component:AddskillComponent},
-  {path: 'Editar-habilidad/:id', component:EditskillComponent},
-  {path: 'Add-proyecto', component:AddproyectoComponent},
-  {path: 'Editar-proyecto/:id', component:EditproyectoComponent},
-  {path: '**', component:Pagina404Component}
+  {path: 'Add-acercade', component:AddacercadeComponent, canActivate: [GuardGuard]},
+  {path: 'Editar-acercade/:id', component:EditacercadeComponent, canActivate: [GuardGuard]},
+  {path: 'Add-experiencia', component:AddexperinciaComponent, canActivate: [GuardGuard]},
+  {path: 'Editar-experiencia/:id', component:EditexperienciaComponent, canActivate: [GuardGuard]},
+  {path: 'Add-estudio', component:AddestudioComponent, canActivate: [GuardGuard]},
+  {path: 'Editar-estudio/:id', component:EditestudioComponent, canActivate: [GuardGuard]},
+  {path: 'Add-habilidad', component:AddskillComponent, canActivate: [GuardGuard]},
+  {path: 'Editar-habilidad/:id', component:EditskillComponent, canActivate: [GuardGuard]},
+  {path: 'Add-proyecto', component:AddproyectoComponent, canActivate: [GuardGuard]},
+  {path: 'Editar-proyecto/:id', component:EditproyectoComponent, canActivate: [GuardGuard]},
+  {path: '**', redirectTo: '/'}
 ];
 
 @NgModule({

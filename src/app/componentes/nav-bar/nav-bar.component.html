@@ -21,8 +21,9 @@
         ></a>
       </ul>
     </div>
-    <button routerLink="/Login" type="button" class="btn btn-secondary">
-      LOGIN
-    </button>
+      <button *ngIf="!logueado" routerLink="/Login" type="button" class="btn btn-secondary">
+        LOGIN
+      </button>
+      <app-logout *ngIf="logueado"></app-logout>
   </div>
 </nav>

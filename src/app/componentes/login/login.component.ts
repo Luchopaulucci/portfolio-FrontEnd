@@ -11,7 +11,14 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  persona: Persona = new Persona("nombreCompleto", "informacion", "id", "urlFoto","email","clave");
+  persona: Persona = new Persona(
+    'nombreCompleto',
+    'informacion',
+    'id',
+    'urlFoto',
+    'email',
+    'clave'
+  );
 
   constructor(
     private formBuilder: FormBuilder,
@@ -19,26 +26,35 @@ export class LoginComponent implements OnInit {
     private authService: AutenticacionService
   ) {
     this.form = this.formBuilder.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       clave: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
 
   ngOnInit() {}
 
+  get Email() {
+    return this.form.get('email');
+  }
+
   get Clave() {
     return this.form.get('clave');
-  }
-  get Mail() {
-    return this.form.get('email');
   }
 
   onEnviar(event: Event) {
     event.preventDefault;
-    this.authService.loginPersona(this.form.value).subscribe(data =>
-      {
-        console.log("DATA: " + JSON.stringify(data));
-      })
-      window.location.reload();
+    if (this.form.valid) {
+      this.authService.loginPersona(JSON.stringify(this.form.value)).subscribe(
+        (data) => {
+          console.log('DATA: ' + JSON.stringify(data));
+          window.location.reload();
+        },
+        (error) => {
+          alert('error al iniciar sesion');
+        }
+      );this.ruta.navigate([''])
+    } else {
+      alert('Hay un error en el formulario');
+    }
   }
 }
