@@ -18,9 +18,9 @@ export class AddexperinciaComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
-      area: ['', [Validators.required]],
-      desde: ['', [Validators.required]],
-      hasta: ['', [Validators.required]],
+      fecha: ['', [Validators.required]],
+      urlCertificado: ['', [Validators.required]],
+      urlFotoCertificado: ['', [Validators.required]],
     });
   }
 
@@ -31,21 +31,21 @@ export class AddexperinciaComponent implements OnInit {
     return this.form.get('titulo');
   }
 
-  get Area() {
-    return this.form.get('area');
+  get Fecha() {
+    return this.form.get('fecha');
   }
 
-  get Desde() {
-    return this.form.get('desde');
+  get UrlCertificado() {
+    return this.form.get('urlCertificado');
   }
 
-  get Hasta() {
-    return this.form.get('hasta');
+  get UrlFotoCertificado() {
+    return this.form.get('urlFotoCertificado');
   }
 
   onCreate(): void {
     this.sExperiencia.crearExperiencia(this.form.value).subscribe(data => {
-      alert('Experiencia Añadida');
+      alert('Certificado Añadido');
       this.router.navigate(['']);
     });
   }

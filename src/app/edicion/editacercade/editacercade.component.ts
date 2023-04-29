@@ -44,7 +44,7 @@ export class EditacercadeComponent implements OnInit {
       data => {
         this.persona = data;
       }, err => {
-        alert("Error al modificar la habilidad")
+        alert("Error al modificar la persona")
         this.router.navigate(['']);
       }
     )
@@ -56,7 +56,7 @@ export class EditacercadeComponent implements OnInit {
       data => {
         this.router.navigate([''])
       }, err =>{
-        alert("Error al modificar la habilidad")
+        alert("Error al modificar la persona")
         this.router.navigate(['']);
       }
     )

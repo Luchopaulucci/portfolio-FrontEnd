@@ -22,7 +22,7 @@ export class EditskillComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
-      porcentaje: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
+      urlFotoHabilidad: ['', [Validators.required]],
     });
   }
 
@@ -41,8 +41,8 @@ export class EditskillComponent implements OnInit {
   get Titulo() {
     return this.form.get('titulo');
   }
-  get Porcentaje() {
-    return this.form.get('porcentaje');
+  get UrlFotoHabilidad() {
+    return this.form.get('urlFotoHabilidad');
   }
 
   onUpdate() {

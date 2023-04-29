@@ -13,19 +13,13 @@
       <div class="row mb-12 graficos">
         <div class="col-12 align-items-center">
           <p class="h5">{{ habilidad.titulo }}</p>
-          <div class="progress mb-5 rounded-5" style="height: 15px">
-            <div
-              class="progress-bar"
-              role="progressbar"
-              style="width: 100%"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              [style.width.%]="habilidad.porcentaje"
-              style="min-width: 10%;">
-              {{habilidad.porcentaje}}
-            </div>
-          </div>
+        </div>
+        <div class="box-shadow" style="max-width: 100px; max-height: 100px;">
+          <img
+            class="img-fluid rounded"
+            [src]="habilidad.urlFotoHabilidad"
+            alt="lucho"
+          />
         </div>
       </div>
       <div *ngIf="modoEdit" class="btn-group" role="group" aria-label="Basic example">

@@ -16,34 +16,34 @@
             <strong>El titulo es requerido.</strong>
           </p>
         </div>
-        <!-------------------------------INPUT PARA EL AREA--------------------------------->
+        <!-------------------------------INPUT PARA LA FECHA--------------------------------->
         <div class="mb-4">
-          <label for="exampleInputPassword1" class="form-label"> Area </label>
-          <input type="string" class="form-control" formControlName="area" placeholder="minimo de 6 caracteres"/>
+          <label for="fecha" class="form-label"> Fecha </label>
+          <input type="text" class="form-control" formControlName="fecha"/>
         </div>
-        <div *ngIf="Area?.errors && Area?.touched">
-          <p *ngIf="Area?.hasError('required')" class="error">
-            <strong>El area es requerida.</strong>
-          </p>
-        </div>
-        <!-------------------------------INPUT PARA LA FECHA DESDE--------------------------------->
-        <div class="mb-4">
-          <label for="email">Desde </label>
-          <input type="date" class="form-control" formControlName="desde" />
-        </div>
-        <div *ngIf="Desde?.errors && Desde?.touched">
-          <p *ngIf="Desde?.hasError('required')" class="error">
+        <div *ngIf="Fecha?.errors && Fecha?.touched">
+          <p *ngIf="Fecha?.hasError('required')" class="error">
             <strong>La fecha es requerida.</strong>
           </p>
         </div>
-        <!-------------------------------INPUT PARA LA FECHA HASTA--------------------------------->
+        <!-------------------------------INPUT PARA LA URL DEL CERTIFICADO--------------------------------->
         <div class="mb-4">
-          <label for="email">Hasta </label>
-          <input type="date" class="form-control" formControlName="hasta" />
+          <label for="urlCertificado">URL del certificado </label>
+          <input type="text" class="form-control" formControlName="urlCertificado" />
         </div>
-        <div *ngIf="Hasta?.errors && Hasta?.touched">
-          <p *ngIf="Hasta?.hasError('required')" class="error">
-            <strong>La fecha es requerida.</strong>
+        <div *ngIf="UrlCertificado?.errors && UrlCertificado?.touched">
+          <p *ngIf="UrlCertificado?.hasError('required')" class="error">
+            <strong>La URL es requerida.</strong>
+          </p>
+        </div>
+        <!-------------------------------INPUT PARA LA URL DE LA FOTO DEL CERTIFICADO--------------------------------->
+        <div class="mb-4">
+          <label for="urlFotoCertificado">URL foto del certificado </label>
+          <input type="text" class="form-control" formControlName="urlFotoCertificado" />
+        </div>
+        <div *ngIf="UrlFotoCertificado?.errors && UrlFotoCertificado?.touched">
+          <p *ngIf="UrlFotoCertificado?.hasError('required')" class="error">
+            <strong>La URL es requerida.</strong>
           </p>
         </div>
         <!-------------------------------BOTON PARA ENVIAR--------------------------------->

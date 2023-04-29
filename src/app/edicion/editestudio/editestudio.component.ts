@@ -50,7 +50,7 @@ export class EditestudioComponent implements OnInit {
         this.estudio = data;
       },
       (err) => {
-        alert('Error al modificar la habilidad');
+        alert('Error al modificar el estudio');
         this.router.navigate(['']);
       }
     );
@@ -63,7 +63,7 @@ export class EditestudioComponent implements OnInit {
         this.router.navigate(['']);
       },
       (err) => {
-        alert('Error al modificar la habilidad');
+        alert('Error al modificar el estudio');
         this.router.navigate(['']);
       }
     );

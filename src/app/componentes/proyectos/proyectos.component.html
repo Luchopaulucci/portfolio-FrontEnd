@@ -12,8 +12,13 @@
         <div class="card-body">
           <h5>{{ proyecto.titulo }}</h5>
           <p>Informacion: {{ proyecto.informacion }}</p>
-          <p>Inicio: {{ proyecto.desde }}</p>
-          <p>Fin: {{ proyecto.hasta }}</p>
+          <div class="box-shadow">
+            <img
+              class="img-fluid rounded"
+              [src]="proyecto.urlFotoProyecto"
+              alt="lucho"
+            />
+          </div>
           <p>Url: <a href="">{{proyecto.urlProyecto}}</a></p>
           <div *ngIf="modoEdit" class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-primary" routerLink="/Editar-proyecto/{{proyecto.id}}">

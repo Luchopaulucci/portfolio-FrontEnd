@@ -19,8 +19,7 @@ export class AddproyectoComponent implements OnInit {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
       informacion: ['', [Validators.required]],
-      desde: ['', [Validators.required]],
-      hasta: ['', [Validators.required]],
+      urlFotoProyecto: ['', [Validators.required]],
       urlProyecto: ['', [Validators.required]],
     });
   }
@@ -33,11 +32,8 @@ export class AddproyectoComponent implements OnInit {
   get Informacion() {
     return this.form.get('informacion');
   }
-  get Desde() {
-    return this.form.get('desde');
-  }
-  get Hasta() {
-    return this.form.get('hasta');
+  get UrlFotoProyecto() {
+    return this.form.get('urlFotoProyecto');
   }
   get UrlProyecto() {
     return this.form.get('urlProyecto');

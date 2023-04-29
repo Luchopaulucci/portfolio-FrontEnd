@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       this.authService.loginPersona(JSON.stringify(this.form.value)).subscribe(
         (data) => {
-          console.log('DATA: ' + JSON.stringify(data));
           window.location.reload();
         },
         (error) => {

@@ -26,23 +26,13 @@
             <strong>La informacion es requerida.</strong>
           </p>
         </div>
-        <!-------------------------------INPUT PARA LA FECHA DESDE--------------------------------->
+        <!-------------------------------INPUT PARA LA URL DE LA FOTO DEL PROYECTO--------------------------------->
         <div class="mb-4">
-          <label for="email"> Desde </label>
-          <input type="date" class="form-control" formControlName="desde" />
+          <label for="urlFotoProyecto"> URL foto del proyecto </label>
+          <input type="text" class="form-control" formControlName="urlFotoProyecto" />
         </div>
-        <div *ngIf="Desde?.errors && Desde?.touched">
-          <p *ngIf="Desde?.hasError('required')" class="error">
-            <strong>La fecha es requerida.</strong>
-          </p>
-        </div>
-        <!-------------------------------INPUT PARA LA FECHA HASTA--------------------------------->
-        <div class="mb-4">
-          <label for="email"> Hasta </label>
-          <input type="date" class="form-control" formControlName="hasta" />
-        </div>
-        <div *ngIf="Hasta?.errors && Hasta?.touched">
-          <p *ngIf="Hasta?.hasError('required')" class="error">
+        <div *ngIf="UrlFotoProyecto?.errors && UrlFotoProyecto?.touched">
+          <p *ngIf="UrlFotoProyecto?.hasError('required')" class="error">
             <strong>La fecha es requerida.</strong>
           </p>
         </div>

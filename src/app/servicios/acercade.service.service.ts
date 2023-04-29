@@ -8,7 +8,7 @@ import { Persona } from '../model/persona';
 })
 export class AcercadeServiceService {
 
-  url = 'https://portfolio-backend-wjb2.onrender.com/persona/'
+  url = 'https://portfolio-backend-wjb2.onrender.com/persona'
 
   constructor(private httpClient:HttpClient) { }
 

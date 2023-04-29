@@ -9,21 +9,21 @@
         <!-------------------------------INPUT PARA EL TITULO--------------------------------->
         <div class="mb-4">
           <label for="titulo"> <i class="bi bi-envelope-fill"></i> Nombre de la tecnologia </label>
-          <input type="texto" class="form-control" formControlName="titulo" id="titulo" name="titulo" [(ngModel)]="habilidad.titulo" required/>
+          <input type="text" class="form-control" formControlName="titulo" id="titulo" name="titulo" [(ngModel)]="habilidad.titulo" required/>
         </div>
         <div *ngIf="Titulo?.errors && Titulo?.touched">
           <p *ngIf="Titulo?.hasError('required')" class="error">
             <strong>El titulo es requerido.</strong>
           </p>
         </div>
-        <!-------------------------------INPUT DE EL PORCENTAJE--------------------------------->
+        <!-------------------------------INPUT DE EL FOTO DE LA HABILIDAD/TECNOLOGIA--------------------------------->
         <div class="mb-4">
-          <label for="porcentaje"> <i class="bi bi-envelope-fill"></i> Porcentaje de aprendisaje </label>
-          <input type="text" class="form-control" formControlName="porcentaje" id="porcentaje" name="porcentaje" [(ngModel)]="habilidad.porcentaje" required/>
+          <label for="urlFotoHabilidad"> <i class="bi bi-envelope-fill"></i> URL de la foto de la habilidad </label>
+          <input type="text" class="form-control" formControlName="urlFotoHabilidad" id="urlFotoHabilidad" name="urlFotoHabilidad" [(ngModel)]="habilidad.urlFotoHabilidad" required/>
         </div>
-        <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
-          <p *ngIf="Porcentaje?.hasError('required')" class="error">
-            <strong>El porcentaje es requerido.</strong>
+        <div *ngIf="UrlFotoHabilidad?.errors && UrlFotoHabilidad?.touched">
+          <p *ngIf="UrlFotoHabilidad?.hasError('required')" class="error">
+            <strong>El URL es requerida.</strong>
           </p>
         </div>
         <!-------------------------------BOTON PARA ENVIAR--------------------------------->

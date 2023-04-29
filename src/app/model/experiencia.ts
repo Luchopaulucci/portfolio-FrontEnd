@@ -1,14 +1,14 @@
 export class Experiencia {
     id! : number;
     titulo : string;
-    area : string;
-    desde : string;
-    hasta : string;
+    urlCertificado : string;
+    urlFotoCertificado : string;
+    fecha:string;
 
-    constructor(titulo:string, area:string, desde:string, hasta:string ){
+    constructor(titulo:string, urlCertificado:string, urlFotoCertificado:string, fecha:string ){
         this.titulo = titulo;
-        this.area = area;
-        this.desde = desde;
-        this.hasta = hasta;
+        this.urlCertificado = urlCertificado;
+        this.urlFotoCertificado = urlFotoCertificado;
+        this.fecha = fecha;
     }
 }

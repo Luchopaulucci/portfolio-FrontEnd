@@ -18,7 +18,7 @@
         </div>
         <!-------------------------------INPUT PARA LA INFORMACION--------------------------------->
         <div class="mb-4">
-          <label for="Informacion" class="form-label"> Informacion </label>
+          <label for="informacion" class="form-label"> Informacion </label>
           <input type="text" class="form-control" formControlName="informacion" id="infomacion" name="informacion" [(ngModel)]="proyecto.informacion" required/>
         </div>
         <div *ngIf="Informacion?.errors && Informacion?.touched">
@@ -26,23 +26,13 @@
             <strong>La informacion es requerida.</strong>
           </p>
         </div>
-        <!-------------------------------INPUT PARA LA FECHA DESDE--------------------------------->
+        <!-------------------------------INPUT PARA LA URL DE LA FOTO DEL PROYECTO--------------------------------->
         <div class="mb-4">
-          <label for="email"> Desde </label>
-          <input type="date" class="form-control" formControlName="desde" id="desde" name="hasta" [(ngModel)]="proyecto.desde" required />
+          <label for="urlFotoProyecto"> Desde </label>
+          <input type="text" class="form-control" formControlName="urlFotoProyecto" id="urlFotoProyecto" name="urlFotoProyecto" [(ngModel)]="proyecto.urlFotoProyecto" required />
         </div>
-        <div *ngIf="Desde?.errors && Desde?.touched">
-          <p *ngIf="Desde?.hasError('required')" class="error">
-            <strong>La fecha es requerida.</strong>
-          </p>
-        </div>
-        <!-------------------------------INPUT PARA LA FECHA HASTA--------------------------------->
-        <div class="mb-4">
-          <label for="hasta"> Hasta </label>
-          <input type="date" class="form-control" formControlName="hasta" id="hasta" name="hasta" [(ngModel)]="proyecto.hasta" required/>
-        </div>
-        <div *ngIf="Hasta?.errors && Hasta?.touched">
-          <p *ngIf="Hasta?.hasError('required')" class="error">
+        <div *ngIf="UrlFotoProyecto?.errors && UrlFotoProyecto?.touched">
+          <p *ngIf="UrlFotoProyecto?.hasError('required')" class="error">
             <strong>La fecha es requerida.</strong>
           </p>
         </div>
@@ -51,8 +41,8 @@
           <label for="urlProyecto"> URL del proyecto </label>
           <input type="text" class="form-control" formControlName="urlProyecto" id="urlProyecto" name="urlProyecto" [(ngModel)]="proyecto.urlProyecto" required/>
         </div>
-        <div *ngIf="Hasta?.errors && Hasta?.touched">
-          <p *ngIf="Hasta?.hasError('required')" class="error">
+        <div *ngIf="UrlProyecto?.errors && UrlProyecto?.touched">
+          <p *ngIf="UrlProyecto?.hasError('required')" class="error">
             <strong>La fecha es requerida.</strong>
           </p>
         </div>

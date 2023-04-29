@@ -22,22 +22,9 @@ export class EditproyectoComponent implements OnInit {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
       informacion: ['', [Validators.required]],
-      desde: ['', [Validators.required]],
-      hasta: ['', [Validators.required]],
+      urlFotoProyecto: ['', [Validators.required]],
       urlProyecto: ['', [Validators.required]],
     });
-  }
-
-  ngOnInit(): void {
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.sProyectos.findProyectos(id).subscribe(
-      data => {
-        this.proyecto = data;
-      }, err => {
-        alert("Error al modificar la habilidad")
-        this.router.navigate(['']);
-      }
-    )
   }
 
   get Titulo() {
@@ -46,14 +33,23 @@ export class EditproyectoComponent implements OnInit {
   get Informacion() {
     return this.form.get('informacion');
   }
-  get Desde() {
-    return this.form.get('desde');
-  }
-  get Hasta() {
-    return this.form.get('hasta');
+  get UrlFotoProyecto() {
+    return this.form.get('urlFotoProyecto');
   }
   get UrlProyecto() {
     return this.form.get('urlProyecto');
+  }
+
+  ngOnInit(): void {
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.sProyectos.findProyectos(id).subscribe(
+      data => {
+        this.proyecto = data;
+      }, err => {
+        alert("Error al modificar el proyecto")
+        this.router.navigate(['']);
+      }
+    )
   }
 
   onUpdate() {
@@ -62,9 +58,10 @@ export class EditproyectoComponent implements OnInit {
       data => {
         this.router.navigate([''])
       }, err =>{
-        alert("Error al modificar la habilidad")
+        alert("Error al modificar el proyecto")
         this.router.navigate(['']);
       }
     )
   }
+
 }

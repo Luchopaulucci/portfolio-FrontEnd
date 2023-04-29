@@ -21,9 +21,9 @@ export class EditexperienciaComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
-      area: ['', [Validators.required]],
-      desde: ['', [Validators.required]],
-      hasta: ['', [Validators.required]],
+      fecha: ['', [Validators.required]],
+      urlCertificado: ['', [Validators.required]],
+      urlFotoCertificado: ['', [Validators.required]],
     });
   }
 
@@ -31,16 +31,16 @@ export class EditexperienciaComponent implements OnInit {
     return this.form.get('titulo');
   }
 
-  get Area() {
-    return this.form.get('area');
+  get Fecha() {
+    return this.form.get('fecha');
   }
 
-  get Desde() {
-    return this.form.get('desde');
+  get UrlCertificado() {
+    return this.form.get('urlCertificado');
   }
 
-  get Hasta() {
-    return this.form.get('hasta');
+  get UrlFotoCertificado() {
+    return this.form.get('urlFotoCertificado');
   }
 
   ngOnInit(): void {
@@ -49,7 +49,7 @@ export class EditexperienciaComponent implements OnInit {
       data => {
         this.experiencia = data;
       }, err => {
-        alert("Error al modificar la habilidad")
+        alert("Error al modificar el certificado")
         this.router.navigate(['']);
       }
     )
@@ -61,7 +61,7 @@ export class EditexperienciaComponent implements OnInit {
       data => {
         this.router.navigate([''])
       }, err =>{
-        alert("Error al modificar la habilidad")
+        alert("Error al modificar el certificado")
         this.router.navigate(['']);
       }
     )

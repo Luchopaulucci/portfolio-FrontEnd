@@ -18,7 +18,7 @@ export class AddskillComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group({
       titulo: ['', [Validators.required]],
-      porcentaje: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
+      urlFotoHabilidad: ['', [Validators.required]],
     });
   }
 
@@ -28,8 +28,8 @@ export class AddskillComponent implements OnInit {
     return this.form.get('titulo');
   }
 
-  get Porcentaje() {
-    return this.form.get('porcentaje');
+  get UrlFotoHabilidad() {
+    return this.form.get('urlFotoHabilidad');
   }
 
   onCreate(): void {
@@ -38,7 +38,7 @@ export class AddskillComponent implements OnInit {
         alert('Habilidad Añadida');
         this.router.navigate(['']);
     }, err =>{
-      alert("Fallo")
+      alert("Fallo al agregar la Habilidad")
       this.router.navigate(['']);
     }
     )

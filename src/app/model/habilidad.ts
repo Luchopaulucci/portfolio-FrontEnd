@@ -1,10 +1,10 @@
 export class Habilidad {
     id!: number;
     titulo : string;
-    porcentaje : number;
+    urlFotoHabilidad : string;
 
-    constructor(titulo:string, porcentaje:number){
+    constructor(titulo:string, urlFotoHabilidad:string){
         this.titulo = titulo;
-        this.porcentaje = porcentaje;
+        this.urlFotoHabilidad = urlFotoHabilidad;
     }
 }
