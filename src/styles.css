@@ -1,24 +1,12 @@
-.section{
-    padding: 100px;
+/* ----------CUERPO DE LA PAGINA----------- */
+body{
+    background-color: #292929;
 }
-.gray-bg{
-    background-color: #eaedf2;
+/* ----------PARA QUE LOS ROW NO SE EXTIENDAN----------- */
+.row{
+    --bs-gutter-x: p;
 }
-.titulo{
-    padding-bottom: 40px;
-}
-.social{
-    letter-spacing:15px;
-    padding-top: 15px;
-}
-.agregar-eliminar{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 25px;
-}
-.lista{
+/* ----------LISTAS PARA MOSTRAR LAS COSAS----------- */
+li{
     list-style: none;
-}
-.card{
-    margin-top: 25px;
 }

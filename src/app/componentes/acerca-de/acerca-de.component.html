@@ -1,49 +1,31 @@
-<section id="acerca-de" class="section gray-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="titulo">
-          <h3 class="dark-color text-center">Acerca de mi</h3>
-        </div>
-        <div *ngIf="modoEdit" class="agregar-eliminar">
-          <button
-            type="button"
-            class="btn btn-primary"
-            routerLink="/Add-acercade"
-          >
-            <i class="fa-solid fa-plus"></i>
-          </button>
-        </div>
+<div class="acerca-de">
+  <h2 class="titulo-acerca">ACERCA DE</h2>
+  <div class="boton">
+    <button *ngIf="modoEdit" type="button" class="btn" routerLink="/Add-acercade">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+  <li *ngFor="let dato of perfil" >
+    <div class="row contenido">
+      <div class="col-4">
+        <img class="img-fluid" [src]="dato.urlFoto" alt="Luciano Paulucci" />
       </div>
-    </div>
-    <li *ngFor="let dato of perfil" class="lista">
-    <div class="row align-items-center">
-      <div class="col-lg-4">
-        <div class="box-shadow">
-          <img
-            class="img-fluid rounded"
-            [src]="dato.urlFoto"
-            alt="lucho"
-          />
-        </div>
-      </div>
-      <div class="col-xl-6 info-personal">
-        <div class="acerca-de-mi">
-          <h4>Soy {{dato.nombreCompleto}}</h4>
-          <p>
-            {{dato.informacion}}
-          </p>
-        </div>
-        <div *ngIf="modoEdit" class="btn-group" role="group">
-          <button type="button" class="btn btn-primary" routerLink="/Editar-acercade/{{dato.id}}">
+      <div class="col-7 acerca-texto">
+        <h4>
+          Soy {{dato.nombreCompleto}}
+        </h4>
+        <p>
+          {{dato.informacion}}
+        </p>
+        <div *ngIf="modoEdit" class="btn-group botones" role="group">
+          <button type="button" class="btn" routerLink="/Editar-acercade/{{dato.id}}">
             <i class="fa-solid fa-pen"></i>
           </button>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn">
             <i class="fa-solid fa-trash" (click)="delete(dato.id)"></i>
           </button>
         </div>
       </div>
     </div>
-    </li>
-  </div>
-</section>
+  </li>
+</div>

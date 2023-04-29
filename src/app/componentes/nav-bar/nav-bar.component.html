@@ -1,4 +1,4 @@
-<nav id="retorno" class="navbar navbar-dark bg-primary">
+<!-- <nav id="retorno" class="navbar navbar-dark bg-primary">
   <div class="container-fluid">
     <div id="logo-arg-programa" class="logo-arg-programa">
       <a href=""
@@ -25,5 +25,31 @@
         LOGIN
       </button>
       <app-logout *ngIf="logueado"></app-logout>
+  </div>
+</nav> -->
+
+
+
+
+
+
+
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <div>
+      <img src="../../../assets/imagenes/logo.png" alt="Luciano Paulucci" class="logo">
+    </div>
+    <div class="links">
+      <a href="">Acerca</a>
+      <a href="">Habilidades</a>
+      <a href="">Proyectos</a>
+      <a href="">Educacion</a>
+      <a href="">Certificaciones</a>
+      <div>
+        <button *ngIf="!logueado" routerLink="/Login" type="button" class="btn">LOGIN</button>
+        <app-logout *ngIf="logueado"></app-logout>
+      </div>
+    </div>
   </div>
 </nav>

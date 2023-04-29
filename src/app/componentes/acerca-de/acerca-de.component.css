@@ -1,10 +1,44 @@
-.acerca-de-mi{
-    padding: 5px;
+/* ----------CONTENEDOR ACERCA DE----------- */
+.acerca-de{
+    width: 100%;
+    margin: 40px 0px;
 }
-.acerca-de-titulo{
-    padding-bottom: 20px;
+
+.contenido{
+    display: flex;
+    justify-content: center;
 }
-.info-personal{
-    text-align: start;
-    font-size: 20px;
+/* ----------TITULO DEL ACERCA DE----------- */
+.titulo-acerca{
+    display: flex;
+    justify-content: center;
+    color: #ffe400;
+}
+/* ----------FOTO DE PERFIL----------- */
+.acerca-foto{
+    max-width: 100%;
+}
+/* ----------NOMBRE - INFORMACION----------- */
+.acerca-texto{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+/* ----------BOTONES----------- */
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    color: #ffffff;
+    background-color: #585858;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    margin-top: 5%;
 }

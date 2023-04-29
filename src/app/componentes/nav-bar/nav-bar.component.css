@@ -1,5 +1,30 @@
-.logo-arg {
-    width: 150px;
-    height: 90px;
-    padding-left: 0.5em;
+/* ----------NAVBAR EN GENERAL----------- */
+.navbar{
+    background-color: #585858;
+
+}
+/* ----------LOGO----------- */
+.logo{
+    max-width: 150px;
+    max-height: 200px;
+}
+/* ----------CONJUNTO DE ANCHORS----------- */
+.links{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+/* ----------ANCHORS----------- */
+a{
+    color: #ffc815;
+    text-decoration: none;
+}
+/* ----------CUANDO LE PONEMOS EL MOUSE ARRIBA AL ANCHOR----------- */
+a:hover{
+    color: white;
+}
+/* ----------BOTON DE LOGIN----------- */
+.btn{
+    color: #ffc815;
+    background-color: #292929;
 }

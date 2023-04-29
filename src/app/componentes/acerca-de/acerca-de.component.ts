@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { AcercadeServiceService } from 'src/app/servicios/acercade.service.service';
 import { Persona } from 'src/app/model/persona';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
